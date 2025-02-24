@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - LuxFlight Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    :root {
+  --primary-color: #f13033;
+  --primary-color-dark: #c3282b;
+  --secondary-color: #f9f9f9;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+    body {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #000;
+  height: 60px;
+}
+.subscribe {
+  background-image: url("assets/subscribe.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 300px;
+}
+.input-container {
+  width: 100%; /* Ensures input containers take full width of the form */
+  display: flex;
+  justify-content: center; /* Centers the flag, country code, and input field horizontally */
+  align-items: center;
+}
+.subscribe__container h4 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.subscribe__container form {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.section__container {
+  margin: auto;
+  padding: 5rem 1rem;
+}
+.section__container.header__container {
+  position: relative;
+  z-index: 3; /* Ensures text and other elements are above the overlay */
+  text-align: center;
+}
+.subscribe__container input {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  margin-right: 5px; /* Space between prefix and input */
+}
+.separator,
+.input-separator {
+  color: #64748b; /* Match the secondary text color */
+  margin: 0 10px; /* Space around separators */
+  font-size: 1rem; /* Ensure it matches the size of the input text */
+  align-self: center; /* Vertically aligns with the inputs */
+}
+.flag-icon {
+  width: 24px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  background-color: #f13033;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #c3282b;
+}
+.country-code {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+input[type="tel"],
+input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1; /* Allows input fields to take up remaining space */
+  border-color: transparent;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left .logo {
+  height: 80px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.nav-left .nav-items {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-left .nav-items li {
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+    main {
+      max-width: 70%;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .revised{
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 50px;
+        margin-top: 10px;
+    }
+    h1{
+        color: #000000;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+        color: #000000;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ol {
+        counter-reset: item;
+        list-style: none;
+        padding-left: 1em;
+    }
+
+    ol > li {
+        counter-increment: item;
+    }
+
+    ol > li::before {
+        content: counters(item, ".") ". ";
+    }
+    .nav-left .nav-items li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 150px;
+}
+
+.contact-info,
+.agent-info {
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact-info i {
+  color: #ffc496;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.contact-info p,
+.agent-info p {
+  margin: 0;
+}
+footer{
+  padding: 0 15%;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col p {
+  max-width: 300px;
+  color: var(--text-light);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col a {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__socials span a {
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  text-decoration: none;
+}
+
+.footer__socials span a:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color-dark);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+}
+.aggrement{
+  font-size: 35px;
+}
+.footer-info p {
+  margin-bottom: 10px; /* Space between paragraphs */
+  line-height: 1.6; /* Increase line height for better readability */
+  font-size: .6rem;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(20%);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="nav-left">
+          <img src="assets/logo.png" alt="Logo" class="logo" />
+          <ul class="nav-items">
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">REVIEWS</a></li>
+            <li><a href="privacy.html">PRIVACY POLICY</a></li>
+            <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> chad@luxflighttravel.com</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (833) 283-1657</p>
+          </div>
+        </div>
+      </nav>
+  </header>
+  <main>
+    <h1>Welcome to LuxFlight Travel Privacy Policy</h1>
+    <p class="revised">Effective December 3rd, 2024</p>
+    <h2 class="aggrement">Agreement between you (customer) and LuxFlight Travel</h2>
+    <p>
+      LuxFlight Travel (LuxFlight Travel”, “we”, “our”, “us”) respects your privacy and is committed to protecting your personal information. This policy describes LuxFlight Travel practices regarding personally identifiable information or personal data (“personal information/ PI”). This policy applies to our websites, applications, email, voice calls and text messages, and social media accounts(the “Platforms”). When you use the Platforms, you agree to the terms in this policy.</p>
+    <h2>PURPOSE OF THIS PRIVACY POLICY</h2>
+    <p style="margin-bottom: 0; margin-top: 10px;">
+      This privacy policy aims to give you information on how LuxFlight Travel collects and processes your PI, including any PI you may provide through the Platforms, when you purchase a product or service or sign up to our newsletter.
+
+    </p>
+    <p>It is important that you read this privacy policy together with any other privacy policy, notice or fair processing policy we may provide on specific occasions, when we are collecting or processing PI about you, so that you are fully aware of how and why we are using your PI.This privacy policy supplements other notices and privacy policies and is not intended to override them.
+    </p>
+    <h2>CONTACT DETAILS</h2>
+    <p style="margin-top: 10px;">
+      LuxFlight Travel is the company (business) responsible for your PI.</p>
+    <p>We have appointed a Data Protection Officer (DPO) who is responsible for overseeing questions in relation to this privacy policy. If you have any questions about this privacy policy, please contact the DPO using the details set out below.
+    </p>
+    <p>Full name of legal entity: Luxury Travel Services, LLC
+    </p>
+    <p>Email address: privacy@luxflighttravel.com
+
+    </p>
+    <h2>POLICY AMENDMENTS</h2>
+    <p style="margin-top: 10px;">
+      We keep our privacy policy under regular review updating it at least once in 12 months. LuxFlight Travel might make minor amendments to this Privacy policy which shall not adversely affect your privacy, except if laws set otherwise.
+
+    </p>
+    <p>In case of material changes LuxFlight Travel will definitely publish such amendments and amended policy on our website and, as far as possible, notify you either by email or by pop-up windows when you are using our Platforms next time.
+
+    </p>
+    <p>Amendments shall enter into force on the Effective Date.</p>
+<p>Actual version of the Privacy policy is published on our website.
+</p>
+    <h2>DATA ACCURACY</h2>
+    <p style="margin-top: 10px;">
+      When you give us PI, you are telling us, that the information is true, accurate, complete and current. You are also telling us, that you have the authorization to provide it to us
+    </p>
+    <p>It is important that the PI we hold about you is accurate and current. Please keep us informed, if your PI changes during your relationship with us.</p>
+    <h2>THE CATEGORIES OF PERSONAL INFORMATION WE COLLECT</h2>
+    <p style="margin-top: 10px;">
+      We may collect, use, store and transfer different kinds of PI about you which we have grouped together as follows:</p>
+      <ul>
+        <li><strong>Identifiers</strong> or Identity Data such as a first/ middle/ last name, alias, postal address, unique personal identifier (cookie), date of birth, online identifier Internet Protocol address, passport / ID data (number, expiry, country of issuance, nationality) or other similar identifiers.</li>
+        <li><strong>Contact Data</strong> includes (billing address, delivery address, email address and telephone numbers).
+        </li>
+        <li><strong>Commercial</strong> Information, including requested price quotes, products or services purchased or other purchasing or consuming histories or tendencies, as well as Financial Data (bank account and payment card details) and Transaction Data (details about payments to and from you and other details of products and services you have purchased from us).
+        </li>
+        <li><strong>Network Activity Information</strong>, including, but not limited to Technical Data (your login data, browser type and version, browsing history, search history, time zone setting and location, browser plug-in types and versions, operating system and Platform, and other technology on the devices you use to access our Platforms), and information regarding your interaction with our Platforms (Usage Data).
+          Geolocation data (country, state or city).
+          </li>
+        <li><strong>Audio</strong> (e.g. call records) and Electronic (e.g. email threads) information .
+        </li>
+        <li><strong>Inferences</strong> (conclusions) drawn from any of the PI collected by LuxFlight Travel, including, but not limited to Profile Data (your preferences, characteristics, psychological trends, behavior, attitudes, intelligence, feedback and survey responses) and Marketing Data (your preferences in receiving marketing from us and our partners and your communication preferences).
+        </li>
+      </ul>
+      <p>We also collect, use and share Aggregated Data such as statistical or demographic data for any purpose. Aggregated Data could be derived from your PI, but is not considered PI in law as this data will not directly or indirectly reveal your identity. For example, we may aggregate your Network Activity Information to calculate the percentage of users accessing a specific Platform feature. However, if we combine or connect Aggregated Data with your PI, so that it can directly or indirectly identify you, we treat the combined data as PI which will be used in accordance with this privacy policy.</br><strong>Customer support</strong> If you choose to contact our customer support services we will collect any inquires, complaint or other information that you may submit to our support team.
+      </br>We do not collect any Special Categories of PI about you (this includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health, and genetic and biometric data). Nor do we collect any information about criminal convictions and offences.
+      </p>
+    <h2>CHILDREN</h2>
+    <p style="margin-top: 10px;">
+      LuxFlight Travel does not knowingly collect PI from minors, except if the minor is one of travelers. If we become aware that a minor is attempting to submit PI, we will remove this information from our records.If you are the parent/legal guardian of a minor who has given us PI, please contact us so we can delete it.
+    </p>
+    <h2>IF YOU FAIL TO PROVIDE PERSONAL INFORMATION</h2>
+    <p style="margin-top: 10px;">
+      Where we collect PI required by law or under the terms of a contract, and you fail to provide that PI when requested, we may not be able to perform the contract we have or are trying to enter into with you (for example, to provide you with goods or services). In this case, we may have to cancel a product or service you have with us, but we will notify you if this is the case at the time.</p>
+    <h2>HOW WE COLLECT YOUR PERSONAL INFORMATION</h2>
+    <p style="margin-top: 10px;">
+      We use different methods to collect PI from and about you including through:</p>
+      <p><strong>PI you give to us</strong></p>
+      <p>We collect your PI directly from you (using life chat, online forms or via voice call/ messenger). Any contact data (emails, phones etc.) provided by you throughout any interaction will be treated as your personal contacts and saved in your profile for future communications, unless specifically requested not to be stored (one-time communication only). For example, when you provide us with your PI by requesting a quote, registering or booking travels, contacting our customer support. This includes PI you provide when you:
+      </p>
+      <ul>
+        <li>apply for our products or services;
+        </li>
+        <li>subscribe to our service or publications;request marketing to be sent to you;give us feedback or contact us.
+        </li>
+      </ul>
+      <h2>HOW LuxFlight Travel RESPONDS TO “DO NOT TRACK” SIGNALS
+      </h2>
+      <p>Some browsers have a “Do Not Track” feature that lets you tell websites that you do not want to have your online activities tracked. These features are not yet uniform, so we are not currently set up to respond to those signals.</p>
+  </main>
+  <section class="subscribe">
+    <div class="section__container subscribe__container">
+      <h4>Subscribe and be Updated</h4>
+      <form action="https://formspree.io/f/xanwyovr" method="POST" class="subscribe-form">
+        <div class="input-container">
+          <div class="phone-prefix">
+            <img src="assets/us-flag.png" alt="US Flag" class="flag-icon" />
+            <span class="country-code">+1</span>
+            <span class="separator">|</span>
+          </div>
+          <input
+            type="tel"
+            id="phone phone-separator"
+            placeholder="Phone Number"
+            name="phone"
+            pattern="\d{10}"
+            title="Phone number must be exactly 10 digits without any spaces or dashes."
+            required
+            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="10"
+          />
+        </div>
+        <span class="separator email-separator">|</span>
+        <div class="input-container email-container">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            name="email"
+          />
+        </div>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section> 
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h5>LuxFlight Travel</h5>
+        <p>
+          Welcome to LuxFlight Travel, our tour and travel website is your
+          gateway to a world of wanderlust-inducing experiences.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#destination">Destinations</a>
+        <a href="#subscribe">Write to Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer__col">
+        <h4>Features</h4>
+        <a href="#">Vacation Package</a>
+        <a href="#">List of Tours</a>
+        <a href="#">Gallery</a>
+        <a href="#">Travel on a Budget</a>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__socials">
+          <img src="assets/lets_stay_connected.svg" alt="" />
+          <span>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p>
+        *All the fares displayed are in USD and include all taxes, fees and
+        applicable surcharges. All prices are 'from' per person, based on
+        business class weekday travel (Monday - Thursday) from the USA, and
+        depend on the chosen class of service, departure city, airline and the
+        route. Lowest transatlantic fares are usually from the East Coast;
+        transpacific fares - from the West Coast, fares to Latin America -
+        from Florida. Flyluxury is not able to identify some travel partners
+        or itinerary details online so as not to directly compete with retail
+        sales of our partners. Savings up to 60% off are indicated of the full
+        unrestricted published prices of major airlines and may vary based on
+        individual fare rules. Some airlines may impose additional baggage
+        charges. The fares are subject to seat availability in the
+        corresponding booking inventory. Seats are limited and may not be
+        available on all flights and dates. The fares have flexible booking
+        policy: free exchange and/or cancellation is available now with our
+        partner airlines. In the event of trip cancellation, unless otherwise
+        stated, customers will retain travel credit with the issuing airline
+        for a period determined by the airline policy, excluding airline fees.
+        In the event of exchange, fare difference may apply. The fares and
+        their governing rules are subject to change without prior notice.
+        Other restrictions may apply.
+      </p>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 LuxFlight Travel. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    document.querySelector(".subscribe-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  const form = event.target;
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      Swal.fire({
+        title: "Thank you for subscribing!",
+        text: "You will now receive updates directly to your inbox.",
+        icon: "success",
+        confirmButtonText: "Close",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.reset(); // Reset the form fields
+        }
+      });
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          Swal.fire({
+            title: "Error!",
+            text: data["errors"].map(error => error["message"]).join(", "),
+            icon: "error",
+            confirmButtonText: "Close",
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "There was an error sending your subscription. Please try again later.",
+            icon: "error",
+            confirmButtonText: "Close",
+          });
+        }
+      });
+    }
+  }).catch(error => {
+    Swal.fire({
+      title: "Error!",
+      text: "There was an error sending your subscription. Please try again later.",
+      icon: "error",
+      confirmButtonText: "Close",
+    });
+  });
+});
+  </script>
+</body>
+</html>

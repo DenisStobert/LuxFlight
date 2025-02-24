@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="admin-panel-main.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <div id="loggedInUser"></div>
+        </div>
+        <div class="header-right">
+          <a id="logoutButton" href="#">Log Out</a>
+        </div>
+      </div>
+
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">airplanemode_active</span> LuxFlight
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+          <li class="sidebar-list-item"><a href="customers.html"><span class="material-icons-outlined">groups</span> Customers</a></li>
+          <li class="sidebar-list-item"><a href="users.html"><span class="material-icons-outlined">poll</span> Users</a></li>
+          <li class="sidebar-list-item"><a href="history.html"><span class="material-icons-outlined">history</span> History</a></li>
+        </ul>
+      </aside>
+
+      <main class="main-container">
+        <div class="main-title"><h2>DASHBOARD</h2></div>
+        <div class="main-cards">
+          <div class="card"><div class="card-inner"><h3>ACTIVE</h3><span class="material-icons-outlined">inventory_2</span></div><h1>0</h1></div>
+          <div class="card"><div class="card-inner"><h3>WAITING</h3><span class="material-icons-outlined">category</span></div><h1>0</h1></div>
+          <div class="card"><div class="card-inner"><h3>CUSTOMERS</h3><span class="material-icons-outlined">groups</span></div><h1>0</h1></div>
+          <div class="card"><div class="card-inner"><h3>ALERTS</h3><span class="material-icons-outlined">notification_important</span></div><h1>0</h1></div>
+        </div>
+
+        <div class="charts">
+          <div class="charts-card">
+            <h2 class="chart-title">Add a Flight</h2>
+            <form id="adminForm">
+              <h2>Trip Type</h2>
+              <div class="radio-group">
+                <input type="radio" id="oneWay" name="tripType" value="One Way" required />
+                <label for="oneWay">One Way</label>
+                <input type="radio" id="roundTrip" name="tripType" value="Round Trip" required />
+                <label for="roundTrip">Round Trip</label>
+                <input type="radio" id="multiCity" name="tripType" value="Multi City" required />
+                <label for="multiCity">Multi City</label>
+              </div>
+              <h2>Flight Details</h2>
+              <div id="flightsContainer"></div>
+              <button class="add-flight" type="button" onclick="addFlightDetails()">Add Flight Details</button>
+              <h2>Customer Details</h2>
+              <label for="customerEmail">Customer Email:</label>
+              <input type="email" id="customerEmail" name="customerEmail" /><br />
+              <label for="customerPhone">Customer Phone:</label>
+              <input type="tel" id="customerPhone" name="customerPhone" /><br />
+              <h2>Passengers</h2>
+              <div id="passengersContainer"></div>
+              <button class="add-passenger" type="button" onclick="addPassengerDetails()">Add Passenger</button>
+              <h2>Payment Details</h2>
+              <label for="netprice">Net Price:</label>
+              <input type="text" id="netprice" name="netprice" required /><br />
+              <label for="grossprice">Selling Price:</label>
+              <input type="text" id="grossprice" name="grossprice" required /><br />
+              <label for="credit">Credit:</label>
+              <input type="text" id="credit" name="credit" /><br />
+              <label for="confirmationNumber">Confirmation Number:</label>
+              <input type="text" id="confirmationNumber" name="confirmationNumber" required /><br />
+              <button id="createBookingButton" type="submit">Create Booking</button>
+            </form>
+          </div>
+          <div class="charts-card" style="pointer-events: none; opacity: 0.5;">
+            <h2 class="chart-title">Search Flights</h2>
+            <form id="flightSearchForm">
+              <label for="origin">Origin (IATA code):</label>
+              <input type="text" id="origin" name="origin" required disabled><br><br>
+          
+              <label for="destination">Destination (IATA code):</label>
+              <input type="text" id="destination" name="destination" required disabled><br><br>
+          
+              <label for="departureDate">Departure Date:</label>
+              <input type="date" id="departureDate" name="departureDate" required disabled><br><br>
+          
+              <label for="returnDate">Return Date (optional):</label>
+              <input type="date" id="returnDate" name="returnDate" disabled><br><br>
+          
+              <label for="adults">Number of Adults:</label>
+              <input type="number" id="adults" name="adults" min="1" value="1" disabled><br><br>
+          
+              <button type="submit" disabled>Search Flights</button>
+            </form>
+          
+            <div id="flightResults"></div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+
+    <script src="admin-panel-main.js"></script>
+  </body>
+</html>

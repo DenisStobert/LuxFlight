@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="users.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <div id="loggedInUser"></div>
+        </div>
+        <div class="header-right">
+          <a id="logoutButton" href="#">Log Out</a>
+        </div>
+      </div>
+
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">airplanemode_active</span> LuxFlight
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item"><a href="admin-panel-main.html"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+          <li class="sidebar-list-item"><a href="customers.html"><span class="material-icons-outlined active">groups</span> Customers</a></li>
+          <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">poll</span> Users</a></li>
+          <li class="sidebar-list-item"><a href="history.html"><span class="material-icons-outlined">history</span> History</a></li>        </ul>
+      </aside>
+
+      <main class="main-container">
+        <div class="main-title"><h2>USERS</h2></div>
+        <div class="main-cards">
+          <div class="card"><div class="card-inner"><h3>ACTIVE</h3><span class="material-icons-outlined">inventory_2</span></div><h1 class="users1-active">0</h1></div>
+          <div class="card"><div class="card-inner"><h3>WAITING</h3><span class="material-icons-outlined">category</span></div><h1>0</h1></div>
+          <div class="card"><div class="card-inner"><h3>USERS</h3><span class="material-icons-outlined">groups</span></div><h1 class="users-active">0</h1></div>
+          <div class="card"><div class="card-inner"><h3>ALERTS</h3><span class="material-icons-outlined">notification_important</span></div><h1>0</h1></div>
+        </div>
+
+        <div class="charts">
+          <h2 class="chart-title">Users</h2>
+          <input type="text" id="searchInput" placeholder="Search for users..." onkeyup="searchUsers()" />
+          <button id="openModalButton" class="btn">Add New User</button>
+          <button id="refreshUsersButton" class="btn">Refresh User Data</button>
+          <div class="charts-card">
+            <table id="customersTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Login</th>
+                  <th>Password</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- User rows will be dynamically inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>        
+      </main>
+    </div>
+    <div id="addUserModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New User</h2>
+        <form id="addUserForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+      
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+      
+          <label for="password">Password:</label>
+          <div class="password-container">
+            <input type="password" id="password" name="password" required />
+            <span id="togglePassword" class="eye-icon"><i class="fas fa-eye"></i></span>
+          </div>
+          <label for="role">Role:</label>
+          <select id="role" required>
+            <option value="">Select Role</option>
+            <option value="admin">Owner</option>
+            <option value="user">User</option>
+            <option value="moderator">Admin</option>
+        </select>
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+    </div>    
+    <!-- Your custom script that uses EmailJS -->
+    <script src="users.js"></script>
+  </body>
+</html>

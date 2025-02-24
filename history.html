@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="history.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <div id="loggedInUser"></div>
+        </div>
+        <div class="header-right">
+          <a id="logoutButton" href="#">Log Out</a>
+        </div>
+      </div>
+
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">airplanemode_active</span> LuxFlight
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item"><a href="admin-panel-main.html"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+          <li class="sidebar-list-item"><a href="customers.html"><span class="material-icons-outlined active">groups</span> Customers</a></li>
+          <li class="sidebar-list-item"><a href="users.html"><span class="material-icons-outlined">poll</span> Users</a></li>
+          <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">history</span> History</a></li>        </ul>
+      </aside>
+
+      <main class="main-container">
+        <div class="main-title"><h2>HISTORY</h2></div>
+        <div class="main-cards">
+          <div class="card"><div class="card-inner"><h3>ACTIVE</h3><span class="material-icons-outlined">inventory_2</span></div><h1 class="users1-active">0</h1></div>
+          <div class="card"><div class="card-inner"><h3>WAITING</h3><span class="material-icons-outlined">category</span></div><h1>0</h1></div>
+          <div class="card"><div class="card-inner"><h3>CUSTOMERS</h3><span class="material-icons-outlined">groups</span></div><h1 class="users-active">0</h1></div>
+          <div class="card"><div class="card-inner"><h3>ALERTS</h3><span class="material-icons-outlined">notification_important</span></div><h1>0</h1></div>
+        </div>
+
+        <div class="charts">
+          <h2 class="chart-title">History</h2>
+          <input type="text" id="searchInput" placeholder="Search for customers..." onkeyup="searchCustomers()" />
+          <button id="refreshUsersButton" class="btn">Refresh Customer Data</button>
+          <div class="charts-card">
+            <table id="customersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Total Price</th>
+                        <th>Card Details</th>
+                        <th>Agent</th> <!-- New column for Agent -->
+                    </tr>
+                </thead>
+                <tbody id="customersTableBody">
+                    <!-- Example Row -->
+                </tbody>
+            </table>
+          </div>
+        </div>        
+      </main>
+    </div>
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2 class="header-modal">Additional Information</h2>
+          
+          <p><strong>Name:</strong> <span id="modal-name"></span></p>
+          <p><strong>Email:</strong> <span id="modal-email"></span></p>
+      
+          <!-- Card Details with toggle button -->
+          <h4>
+            <strong>Card Details</strong> 
+            <button class="toggle-button" onclick="toggleSection('card-details')">+</button>
+          </h4>
+          <div id="modal-card-details" class="collapsible-content" style="display: none;">
+            <!-- Card details will be dynamically injected here -->
+          </div>
+      
+          <!-- Billing Details with toggle button -->
+          <h4>
+            <strong>Billing Details</strong> 
+            <button class="toggle-button" onclick="toggleSection('billing-details')">+</button>
+          </h4>
+          <div id="modal-billing-details" class="collapsible-content" style="display: none;">
+            <!-- Billing details will be dynamically injected here -->
+          </div>
+      
+          <!-- Flight Details with toggle button -->
+          <h4>
+            <strong>Flight Details</strong> 
+            <button class="toggle-button" onclick="toggleSection('flight-details')">+</button>
+          </h4>
+          <div id="modal-flight-details" class="collapsible-content" style="display: none;">
+            <!-- Flight details will be dynamically injected here -->
+          </div>
+      
+          <!-- Passenger Details with toggle button -->
+          <h4>
+            <strong>Passenger Details</strong> 
+            <button class="toggle-button" onclick="toggleSection('passenger-details')">+</button>
+          </h4>
+          <div id="modal-passenger-details" class="collapsible-content" style="display: none;">
+            <!-- Passenger details will be dynamically injected here -->
+          </div>
+      
+          <p><strong>Total Amount:</strong> <span id="modal-total-amount"></span></p>
+          <p><strong>Charged by LuxFlight Travel:</strong> <span id="modal-net-price"></span></p>
+          <p><strong>Charged from the airline:</strong> <span id="modal-gross-price"></span></p>
+          <p><strong>Tip Amount:</strong> <span id="modal-tipping-amount"></span></p>
+          <p><strong>Confirmation Number:</strong> <span id="modal-confirmation-number"></span></p>
+      
+          <button id="send-invoice-btn">Send Invoice</button>
+        </div>
+      </div>  
+    <!-- Your custom script that uses EmailJS -->
+    <script src="history.js"></script>
+  </body>
+</html>

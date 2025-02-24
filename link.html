@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <title>Flight Booking Details</title>
+    <link rel="stylesheet" href="link.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://cdn.jsdelivr.net/npm/number-to-words/dist/number-to-words.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <ul class="nav-items">
+          <li><a href="#about-us">ABOUT US</a></li>
+          <li><a href="#reviews">REVIEWS</a></li>
+          <li><a href="#privacy-policy">PRIVACY POLICY</a></li>
+          <li><a href="#terms-conditions">TERMS & CONDITIONS</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i> chad@luxflighttravel.com</p>
+          <p><i class="fa-solid fa-phone"></i> +1 (833) 283-1657</p>
+        </div>
+      </div>
+      <button class="purchase-summary-button" onclick="togglePurchaseSummary()">Purchase Summary</button>
+    </nav>
+
+    <div class="main-content">
+      <div class="left-content">
+        <h2>Review Details and Confirm Your Trip</h2>
+        <p>You're on the final step. Only a few more minutes to finish!</p>
+      </div>
+      <div class="right-content">
+        <div class="step"><i class="fas fa-check-circle"></i><p>Request a quote</p></div>
+        <div class="line"></div>
+        <div class="step"><i class="fas fa-check-circle"></i><p>Review flight options</p></div>
+        <div class="line"></div>
+        <div class="step"><i class="fas fa-check-circle"></i><p>Choose best flight</p></div>
+        <div class="line"></div>
+        <div class="step"><div class="circle">4</div><p>Complete payment</p></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="left-column" id="flightContainer">
+        <h2 class="flight">Flight Details</h2>
+        <div class="trip-type" id="tripTypeContainer"></div>
+        <div id="bookingDetailsContainer"></div>
+        <h2 class="flight">Passenger Details</h2>
+        <div id="passengerDetailsContainer"></div>
+        <div class="excheangeble-flight" id="excheangeble-flight">
+          <div class="excheangeble">
+            <h2 class="excheangeble-text"><i class="fa-solid fa-user-shield"></i>Exchangeable Flight</h2>
+            <p>Choose what's best for you!</p>
+            <img src="assets/exchangeble.png" alt="" />
+          </div>
+          <div class="options">
+            <ul>
+              <div class="change">
+                <li>Change for Any Reason<i class="fa-solid fa-chevron-down"></i></li>
+                <p><i class="fa-solid fa-circle"></i>Add extra flexibility to your flight with Exchangeable Flight Plan.</p>
+                <p><i class="fa-solid fa-circle"></i>Change your flight without any penalties or fees.</p>
+                <p><i class="fa-solid fa-circle"></i>Cancel your seats at least 24 hours before the flight and have 1 year validity of the ticket to change to any other dates.</p>
+                <p><i class="fa-solid fa-circle"></i>Some of the flights might be re-routed.</p>
+                <p><i class="fa-solid fa-circle"></i>Double check with your agent the details.</p>
+              </div>
+            </ul>
+            <div class="exchangeable-options">
+              <label class="custom-radio"><input type="radio" name="exchangeableOption" value="yes" /><span class="custom-radio-square"></span>Yes, add Exchangeable Flight Services</label>
+              <label class="custom-radio"><input type="radio" name="exchangeableOption" value="no" checked /><span class="custom-radio-square"></span>No, do not add Exchangeable Flight Services</label>
+            </div>
+          </div>
+          <p class="fare">Exchangeable Flight is not an insurance policy and does not take the place of insurance obtained or obtainable by you. <br />Fare differences may apply.*</p>
+        </div>
+        <h2 class="flight" id="paymentInfo">Payment Information</h2>
+        <div id="paymentInfo" class="payment-information">
+          <p class="secure-info"><i class="fa-solid fa-lock"></i> All transactions are secure and encrypted.</p>
+          <div class="credit-card">
+            <div class="card-header">
+              <h3>Credit Card / Debit Card</h3>
+              <div class="card-icons">
+                <img src="assets/visa.png" alt="Visa" />
+                <img src="assets/mastercard.png" alt="MasterCard" />
+                <img src="assets/amex.png" alt="Amex" />
+                <img src="assets/discover.png" alt="Discover" />
+              </div>
+              <p class="total-amount" id="total1">$0.00</p>
+            </div>
+          </div>
+          <div class="credit-card-container">
+            <div class="container">
+              <div class="card-container">
+                <div class="front">
+                  <div class="image">
+                    <img src="assets/chip.png" alt="" class="chip" />
+                    <img src="assets/read.png" class="read" />
+                    <div class="card-logo-container"></div>
+                  </div>
+                  <div class="card-number-box">0000 0000 0000 0000</div>
+                  <div class="flexbox">
+                    <div class="box">
+                      <div class="card-holder-name">NAME</div>
+                    </div>
+                    <div class="box">
+                      <div class="valid-thru">
+                        <span>VALID</span><br />
+                        <span>THRU</span>
+                      </div>
+                      <div class="expiration">
+                        <span class="exp-month">MM</span>
+                        <span class="exp-year">YY</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="back">
+                  <div class="stripe"></div>
+                  <div class="box">
+                    <span>cvv</span>
+                    <div class="cvv-box"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-input" id="card-element-container">
+                <div class="input-row full-width">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" class="stripe-element" placeholder="1234 1234 1234 1234" maxlength="19" required />
+                </div>
+                
+                <div class="input-row">
+                  <div class="input-group">
+                    <label for="card-expiry">Expiration</label>
+                    <input type="text" id="card-expiry" class="stripe-element" placeholder="MM/YY" maxlength="5" required />
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="card-cvc">CVV</label>
+                    <input type="text" id="card-cvc" class="stripe-element" placeholder="123" maxlength="4" required />
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="postal-code">Zip Code</label>
+                    <input type="text" id="postal-code" class="stripe-element" placeholder="12345" maxlength="10" required />
+                  </div>
+                </div>
+                
+                <div class="input-row full-width">
+                  <label for="customer-name">Customer Name</label>
+                  <input type="text" id="customer-name" class="name-input1" placeholder="Enter Card Holder's Name" required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="billing-details">
+            <h3>Card 1, Billing Details</h3>
+            <p class="billing-note"><i class="fa-solid fa-circle-info"></i> Your billing address must match exactly the address on your credit card statement</p>
+            <div class="billing-form">
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option value="US">United States</option>
+                </select>
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+              <div class="form-group">
+                <label for="zipcode">ZIP / Postal Code</label>
+                <input type="text" id="zipcode" placeholder="Enter ZIP / Postal Code" />
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" required>
+                  <option value="">Select State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>              
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter City" />
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+              <div class="form-group">
+                <label for="street">Street Address</label>
+                <input type="text" id="street" placeholder="Enter Street Address" />
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Card Holder's Email</label>
+                <input type="email" id="email-send" placeholder="Enter Card Holder's Email" />
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+              <div class="form-group">
+                <label for="billingPhone">Billing Phone Number</label>
+                <input type="text" id="billingPhone" placeholder="Enter Billing Phone" data-placeholder="Enter Billing Phone" />
+                <span class="error-message" style="display: none; color: red">This is a required field</span>
+              </div>
+            </div>
+          </div>
+          <div class="main">
+            <div class="head">
+              <p class="head_1">Did I meet your <span>Expectations?</span></p>
+              <p class="head_2">If you feel that the service provided was exceptional, you can express your gratitude (optional)</p>
+            </div>
+            <ul id="tipOptions">
+              <li data-tip="40"><i class="icon fa-regular fa-face-frown"></i><div class="progress one"><p>1</p><i class="uil uil-check"></i></div><p class="text">OK ($40)</p></li>
+              <li data-tip="50"><i class="icon fa-regular fa-face-meh"></i><div class="progress two"><p>2</p><i class="uil uil-check"></i></div><p class="text">Good ($50)</p></li>
+              <li data-tip="60"><i class="icon fa-regular fa-face-smile"></i><div class="progress three"><p>3</p><i class="uil uil-check"></i></div><p class="text">Great ($60)</p></li>
+              <li data-tip="80"><i class="icon fa-regular fa-face-grin"></i><div class="progress four"><p>4</p><i class="uil uil-check"></i></div><p class="text">Excellent ($80)</p></li>
+              <li data-tip="100"><i class="icon fa-regular fa-face-laugh-beam"></i><div class="progress five"><p>5</p><i class="uil uil-check"></i></div><p class="text">Perfect ($100)</p></li>
+          </ul>
+          </div>
+          <div class="custom-tip-wrapper">
+            <div class="custom-tip">
+              <label for="customTip">Think I did <br/> better?</label>
+              <div class="custom-tip-input-container">
+                <span class="dollar-sign">$</span>
+                <input type="number" id="customTip" min="0" value="0">
+                <span class="value-sign">.00</span>
+              </div>
+            </div>
+            <div class="custom-tip-acknowledge">
+              <input type="checkbox" id="customTipAcknowledge" name="customTipAcknowledge" value="" required>
+              <label for="customTipAcknowledge">
+                <span class="checkbox-custom"></span>
+                <p><span>I agree. </span>that this amount will be charged in addition to the cost of the airline ticket(s)</p>
+              </label>
+            </div>            
+          </div>     
+        </div>
+        <div class="affirmation-container">
+          <div class="affirmation-pay">
+            <label class="affirmation-label">
+              <input type="checkbox" id="affirmationCheckbox" class="checkbox" />
+              <span>
+                <strong>By checking this box I affirm</strong> that I have read, understood, and accepted present 
+                <a href="terms.html" target="_blank">Terms and Conditions</a>, Exchangeable Flight Terms and Conditions, 
+                <a href="privacy.html" target="_blank">Privacy Policy</a>, and airline liability limitations, confirmed the accuracy of flight itinerary, and verified the spelling of the name(s) of the passenger(s) to be matching passenger(s) passport(s) / valid travel document(s), as well as I have taken the consent of Credit Card Holder and all the passengers regarding the 
+                <a href="terms.html" target="_blank">Terms and Conditions</a> and 
+                <a href="privacy.html" target="_blank">Privacy Policy</a>.
+              </span>
+            </label>
+            <span class="error-message" style="display: none; color: red">This is a required field</span>
+            <div class="payment-buttons">
+              <button class="pay-button" id="stripePayButton"><i class="fa-solid fa-lock" id="payButtonIcon"></i> PAY SECURELY NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="protect"><h3>We recommend that you protect your trip</h3><p>Ensure a smooth trip ahead even when things go sideways.</p></div>
+          <div class="main-modal-info">
+            <div class="left-side"><img src="assets/safe money.png" alt=""></div>
+            <div class="right-side"><h2>YOUR TICKETS ARE RESTRICTIVE!</h2><p>Life happens, plans change, and most fares are non-changeable and non-refundable.<br/>Don't get stuck with penalty fees and spoil your trip!<br/>You deserve Peace of Mind in your next adventure.</p></div>
+          </div>
+          <div class="buttons-modal"><button id="confirmYes">NO THANKS</button><button id="confirmNo">PROTECT ME</button></div>
+        </div>
+      </div>      
+      <div class="right-column" id="rightColumnContainer"></div>
+    </div>
+    <footer class="footer">
+      <div class="container-footer">
+        <p class="footer-text">&copy; 2024 <span>LuxFlight Travel</span>. All rights reserved.</p>
+      </div>
+    </footer>    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="link.js"></script>
+  </body>
+</html>

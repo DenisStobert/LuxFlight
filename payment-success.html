@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Payment Success</title>
+</head>
+<body style="text-align: center; padding: 40px 0; background: #EBF0F5; font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif;">
+    <div class="loader-wrapper">
+        <div class="loader">
+          <span style="--i: 1"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 3"></span>
+          <span style="--i: 4"></span>
+          <span style="--i: 5"></span>
+          <span style="--i: 6"></span>
+          <span style="--i: 7"></span>
+          <span style="--i: 8"></span>
+          <span style="--i: 9"></span>
+          <span style="--i: 10"></span>
+          <span style="--i: 11"></span>
+          <span style="--i: 12"></span>
+          <span style="--i: 13"></span>
+          <span style="--i: 14"></span>
+          <span style="--i: 15"></span>
+          <span style="--i: 16"></span>
+          <span style="--i: 17"></span>
+          <span style="--i: 18"></span>
+          <span style="--i: 19"></span>
+          <span style="--i: 20"></span>
+          <div class="rocket"></div>
+        </div>
+      </div>
+      <style>
+        .loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #03a9f4;
+  z-index: 9999; /* High z-index to make sure it covers everything */
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+.loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animate {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(1.2);
+  }
+  80%,
+  100% {
+    transform: scale(0);
+  }
+}
+.rocket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotating 2s linear infinite;
+  animation-delay: -1s;
+}
+@keyframes rotating {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(370deg);
+  }
+}
+.rocket::before {
+  content: "\f072";
+  font-family: fontAwesome;
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  color: #fff;
+  font-size: 60px;
+  transform: rotate(120deg);
+}
+      </style>
+  <table role="presentation" style="width: 100%; border-collapse: collapse; border: 0; border-spacing: 0;">
+    <tr>
+      <td style="padding: 20px 0 30px 0;">
+
+        <div style="background: white; padding: 60px; border-radius: 4px; box-shadow: 0 2px 3px #C8D0D8; display: inline-block; text-align: center;">
+            <div style="text-align: center;">
+                <img src="assets/logo.png" alt="Logo" style="height: 90px;">
+              </div>
+          <div style="text-align: center; margin-bottom: 20px;">
+          </div>
+          <div style="border-radius: 200px; height: 200px; width: 200px; background: #F8FAF5; margin: 0 auto;">
+            <i style="color: #9ABC66; font-size: 100px; line-height: 200px; display: block;">✓</i>
+          </div>
+          <h1 style="color: #88B04B; font-weight: 900; font-size: 40px; margin-bottom: 10px;">Success</h1>
+          <h2 style="font-weight: 600; font-size: 30px;">Your E-Ticket is on its way</h2>
+          <p style="color: #404F5E; font-size: 20px; margin: 0;">Your payment is confirmed.<br>You'll receive an invoice and your ticket shortly!</p><br>
+          <div style="margin-bottom: 20px;"><p class="confirmation"><strong>Confirmation Nr.:</strong> <span id="confirmationNumberDisplay">{{confirmation_number}}</span></p></div><br>
+          <p style="color: #404F5E; font-size: 20px; margin: 0;">Please note it might take from a couple of minutes<br>to a couple of hours to get it issued.</p><br>
+          <p style="color: #404F5E; font-size: 20px; margin: 0;">If you have any questions, contact your agent at:<br><a href="tel:833-283-1657" style="color: red;">+1 (833) 283-1657</a> or at <a href="mailto:chad@luxflighttravel.com" style="color: red;">chad@luxflighttravel.com</a></p>
+        </div>
+
+      </td>
+    </tr>
+  </table>
+  <script>
+    // Add the confirmation number
+    document.addEventListener("DOMContentLoaded", function () {
+  // Function to get URL parameters
+  function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Get the confirmation number from the URL
+  const confirmationNumber = getURLParameter('confirmationNumber');
+  
+  // Display the confirmation number or 'N/A' if not found
+  document.getElementById('confirmationNumberDisplay').innerHTML = confirmationNumber || 'N/A';
+});
+
+    window.addEventListener("load", function () {
+  setTimeout(() => {
+    // Wait for 2 seconds after the page has loaded
+    const loader = document.querySelector(".loader-wrapper");
+    loader.style.opacity = 0;
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000); // Additional time for the fade-out transition
+  }, 1000); // Minimum display time for the loader
+});
+  </script>
+</body>
+</html>

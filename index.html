@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>LuxFlight Travel® | Business Class Flights | Cheap Business Class Flights and First Class Flights Worldwide at 80% OFF</title>
+    <meta name="description" content="Book discounted business class flights with LuxFlight Travel. Save big on your next trip today!">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3AP2WmC5MY8fOBIPVd66YmkD8u8nbcts&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LuxFlight Travel®",
+        "url": "https://luxflighttravel.com",
+        "logo": "https://luxflighttravel.com/assets/logo.png",
+      }
+      </script>
+  </head>
+  <body>
+    <div class="loader-wrapper">
+      <div class="loader">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+        <div class="rocket"></div>
+      </div>
+    </div>
+    <header class="header">
+      <nav>
+        <div class="menu-icon">
+          <a href="javascript:void(0);" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+            <!-- FontAwesome icon -->
+          </a>
+        </div>
+        <div class="nav__logo">
+          <a href="#">
+            <img src="assets/logo.png" alt="Logo" />
+            <span class="logo-separator">|</span>
+            <span class="logo-text">Comfort you can afford</span>
+          </a>
+        </div>
+        <ul class="nav__links">
+          <div class="nav__logo-mobile">
+            <img src="assets/logo.png" alt="Logo" />
+            <!-- Ensure this is the correct path -->
+          </div>
+          <li class="link"><a href="#home" class="active">Home</a></li>
+          <li class="link"><a href="#trending">Trending</a></li>
+          <li class="link"><a href="#guide">Guide</a></li>
+          <li class="link"><a href="#destination">Destinations</a></li>
+          <li class="link"><a href="#client">Client</a></li>
+        </ul>
+        <div class="nav__contact">
+          <a href="tel:833-283-1657"
+            ><img
+              src="assets/us-flag.png"
+              alt="US Flag"
+              class="flag-icon"
+            /><span>+1</span> (833) 283-1657</a
+          >
+        </div>
+      </nav>
+
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline poster="assets/video-placeholder.png" id="heroVideo" loading="lazy">
+          <source
+            src="assets/Dream Of Being The Best _ Qatar Airways.webm"
+            type="video/webm"
+          />
+          <source
+            src="assets/Dream Of Being The Best _ Qatar Airways.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="section__container header__container" id="home">
+          <h1>Fly business for less.</h1>
+          <div class="airline-logos">
+            <img src="assets/qatar-logo.png" alt="Qatar Airways" loading="lazy" />
+            <img src="assets/emirates-logo.png" alt="Emirates" loading="lazy" />
+            <img src="assets/etihad-logo.png" alt="Etihad Airways" loading="lazy" />
+            <img src="assets/delta-logo.png" alt="Delta Airlines" loading="lazy" />
+            <img src="assets/united-logo.png" alt="United Airlines" loading="lazy" />
+            <img src="assets/turkish-logo.png" alt="Turkish Airlines" loading="lazy" />
+            <p class="airlines-text">And Others...</p>
+          </div>
+          <div class="header__form">
+            <div class="trip-type">
+              <span id="roundTrip" class="trip-option round-trip active"
+                >Round-Trip</span
+              >
+              <span id="oneWay" class="trip-option one-way">One-Way</span>
+              <div class="active-line"></div>
+            </div>
+            <form
+              action="search-results.html"
+              method="GET"
+              id="flightSearchForm"
+            >
+              <!-- Ensure method and action are set appropriately -->
+              <div class="input__group">
+                <label for="fromAirport">From:</label>
+                <input
+                  type="text"
+                  id="fromAirport"
+                  name="fromAirport"
+                  placeholder="Departure Airport"
+                  required
+                />
+                <ul id="fromAirportDropdown" class="airport-dropdown"></ul>
+              </div>
+              <div class="input__group">
+                <label for="toAirport">To:</label>
+                <input
+                  type="text"
+                  id="toAirport"
+                  name="toAirport"
+                  placeholder="Arrival Airport"
+                  required
+                />
+                <ul id="toAirportDropdown" class="airport-dropdown"></ul>
+              </div>
+              <div class="input__group">
+                <label for="departureDate">Departure Date:</label>
+                <input
+                  type="date"
+                  id="departureDate"
+                  name="departureDate"
+                  required
+                />
+              </div>
+              <div class="input__group">
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" />
+              </div>
+              <div class="input__group full-width">
+                <label for="passengers">Passengers:</label>
+                <input
+                  type="number"
+                  id="passengers"
+                  name="passengers"
+                  placeholder="Number of Passengers"
+                  min="1"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn">Search Flights</button>
+            </form>
+          </div>
+          <p class="savings-statement">
+            "Last month LuxFlight Travel saved its clients over $365,000."
+          </p>
+        </div>
+      </div>
+    </header>
+    <section class="section__container trending__container" id="trending">
+      <div class="section__header">
+        <h2 class="section__title">Business Trending 2024</h2>
+        <p>Save 50-77%* OFF on Business Class Flights with LuxFlight Travel</p>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Swiper Slide 1 -->
+          <div class="swiper-slide">
+            <div class="trending__card" data-destination="turkey">
+              <img src="assets/trending-1.webp" alt="trending" loading="lazy" />
+              <h1>Turkey</h1>
+              <p>Best Place to Travel by Vogue</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,325*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.8 (10)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 7 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="vietnam">
+              <img src="assets/trending-2.webp" alt="trending" loading="lazy" />
+              <h1>Vietnam</h1>
+              <p>Top 1 Visited Place by Forbes</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,692*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.2 (25)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 3 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="carribean">
+              <img src="assets/trending-3.avif" alt="trending" loading="lazy" />
+              <h1>Carribean</h1>
+              <p>Most Beautiful Place to Visit by abcNEWS</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,165*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.5 (15)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 6 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+          </div>
+          <!-- Swiper Slide 2 -->
+          <div class="swiper-slide">
+            <div class="trending__card" data-destination="dubai">
+              <img src="assets/trending-4.jpg" alt="trending" loading="lazy" />
+              <h1>Dubai</h1>
+              <p>Best Place to Travel by Vogue</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,775*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.3 (12)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 5 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="singapore">
+              <img src="assets/trending-5.webp" alt="trending" loading="lazy" />
+              <h1>Singapore</h1>
+              <p>Top 1 Visited Place by Forbes</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,959*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.4 (21)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 4 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="tokyo">
+              <img src="assets/trending-6.jpeg" alt="trending" loading="lazy" />
+              <h1>Tokyo</h1>
+              <p>Most Beautiful Place to Visit by abcNEWS</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,899*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.9 (19)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 9 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+          </div>
+          <!-- Swiper Slide 3 -->
+          <div class="swiper-slide">
+            <div class="trending__card" data-destination="italy">
+              <img src="assets/trending-7.jpeg" alt="trending" loading="lazy" />
+              <h1>Italy</h1>
+              <p>Best Place to Travel by Vogue</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$1,951*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.5 (5)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 1 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="delhi">
+              <img src="assets/trending-8.jpg" alt="trending" loading="lazy" />
+              <h1>Delhi</h1>
+              <p>Top 1 Visited Place by Forbes</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$1,909*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.4 (22)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 3 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="frankfurt">
+              <img src="assets/trending-9.jpeg" alt="trending" loading="lazy" />
+              <h1>Frankfurt</h1>
+              <p>Most Beautiful Place to Visit by abcNEWS</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$1,975*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.5 (15)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 6 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+          </div>
+          <!-- Swiper Slide 4 -->
+          <div class="swiper-slide">
+            <div class="trending__card" data-destination="amsterdam">
+              <img src="assets/trending-10.jpg" alt="trending" loading="lazy" />
+              <h1>Amsterdam</h1>
+              <p>Best Place to Travel by Vogue</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$1,635*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.8 (11)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 6 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="sydney">
+              <img src="assets/trending-11.jpeg" alt="trending" loading="lazy" />
+              <h1>Sydney</h1>
+              <p>Top 1 Visited Place by Forbes</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,899*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.7 (21)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 2 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+            <div class="trending__card" data-destination="cairo">
+              <img src="assets/trending-12.jpg" alt="trending" loading="lazy" />
+              <h1>Cairo</h1>
+              <p>Most Beautiful Place to Visit by abcNEWS</p>
+              <div class="trending__details">
+                <div class="price">
+                  <p>From</p>
+                  <h3>$2,325*</h3>
+                  <p>*Price varies</p>
+                </div>
+                <div class="trending__ratings">
+                  <div>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-half-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                  <p>4.9 (19)</p>
+                </div>
+              </div>
+              <h5>
+                <span><i class="ri-time-line"></i></span> 9 days
+              </h5>
+              <p>
+                <span><i class="ri-check-line"></i></span> Free Exchanges
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-left" id="modalImage">
+            <!-- Background image set via JS -->
+            <h2 id="modalDestinationName"></h2>
+            <p class="modal-text">
+              From
+              <span
+                id="modalPrice"
+                style="margin-right: 10px; margin-left: 10px"
+              ></span>
+              Round-trip, Total
+            </p>
+            <p id="modalDescription">
+              Our exclusive contracts with the airlines do not allow us to show
+              the details of our discount fares, including flight itineraries
+              and some airline brands online. Just complete the request form
+              below and one of our experts will get in touch with you with the
+              best itinerary and price options for your flight.
+            </p>
+            <p class="how-it-works">How It Works?</p>
+            <ul>
+              <li><span>1. </span>Request Free Quotes</li>
+              <br />
+              <li><span>2. </span>Receive Several Options</li>
+              <br />
+              <li><span>3. </span>Confirm and Travel</li>
+            </ul>
+          </div>
+          <div class="modal-right">
+            <div class="call-info">
+              <div class="call-action">
+                <p>SAVE <span>$100</span> extra by Calling Now</p>
+              </div>
+              <div class="phone-number">
+                <a href="tel:833-283-1657">(833) 283-1657</a>
+              </div>
+              <div class="offline-deals">CALL & ASK FOR OFFLINE DEALS</div>
+            </div>
+            <div class="second-row">
+              <p class="booking-call">Call Us to Book and Save More ⤴</p>
+              <p class="offer-request">or request an offer</p>
+            </div>
+            <form id="bookingForm" action="https://formspree.io/f/xgverpvd" method="POST">
+              <div class="input-row-form">
+                <div class="input-trip" id="tripType">
+                  <span
+                    class="trip-option-form round-trip active"
+                    data-value="Round-Trip"
+                    >Round-Trip</span
+                  >
+                  <span class="trip-option-form one-way" data-value="One-Way"
+                    >One-Way</span
+                  >
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="from">From*</label>
+                  <input
+                    type="text"
+                    id="from"
+                    name="from"
+                    placeholder="City or Airport"
+                    required
+                  />
+                  <ul
+                    class="autocomplete-dropdown"
+                    id="fromAutocompleteDropdown"
+                  ></ul>
+                </div>
+                <div class="input-group">
+                  <label for="to">To*</label>
+                  <input
+                    type="text"
+                    id="to"
+                    name="to"
+                    placeholder="City or Airport"
+                    required
+                  />
+                  <ul
+                    class="autocomplete-dropdown"
+                    id="toAutocompleteDropdown"
+                  ></ul>
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="departureDate">Departure Date*</label>
+                  <input
+                    type="date"
+                    id="departureDate1"
+                    name="departureDate"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="returnDate">Return Date</label>
+                  <input type="date" id="returnDate1" name="returnDate" />
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="name">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="e.g. John Smith"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="passengers">Passengers*</label>
+                  <input
+                    type="text"
+                    id="passengers1"
+                    name="passengers"
+                    placeholder="e.g. 1"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group phone-group">
+                  <label for="phone">Phone Number*</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone number"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="email">Email*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="someone@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="submit">GET FREE QUOTES</button>
+              <p class="safe-text">
+                <span>100% Safe. No purchase required.</span> I agree to provide
+                my phone number and to be contacted by clicking “Get Free
+                Quotes”. Your privacy is respected. Terms of Service.
+              </p>
+            </form>
+            <div class="modal-extra-text">
+              *Our exclusive contracts with the airlines do not allow us to show
+              the details of our discount fares, including flight itineraries
+              and some airline brands online. Just complete the request form
+              below and one of our experts will get in touch with you with the
+              best itinerary and price options for your flight.*
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="how-to-book" id="guide">
+      <h1 class="book">How To Book</h1>
+      <div class="steps-container">
+        <div class="step" id="step1">
+          <img src="assets/step1.png" alt="Step 1" loading="lazy" />
+          <p>
+            <span class="step-span">Step 1:</span> <br />Enter your flight
+            details
+          </p>
+        </div>
+        <div class="step" id="step2">
+          <img src="assets/step2.png" alt="Step 2" loading="lazy" />
+          <p>
+            <span class="step-span">Step 2:</span> <br />Fill your contact
+            information
+          </p>
+        </div>
+        <div class="step" id="step3">
+          <img src="assets/step3.png" alt="Step 3" loading="lazy" />
+          <p>
+            <span class="step-span">Step 3:</span> <br />Your personal travel
+            advisor will contact you
+          </p>
+        </div>
+        <div class="step" id="step4">
+          <img src="assets/step4.png" alt="Step 4" loading="lazy" />
+          <p>
+            <span class="step-span">Step 4:</span> <br />Check your mail and
+            choose the best deal
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container destination__container" id="destination">
+      <div class="section__header">
+        <h2 class="section__title">Top Destinations</h2>
+      </div>
+      <div class="destination__grid">
+        <div
+          class="destination__card"
+          data-city="Sydney"
+          data-image="sydney.jpg"
+        >
+          <img src="assets/destination-1.jpg" alt="Sydney" loading="lazy" />
+          <div class="badge">4.7</div>
+          <div class="destination__details">
+            <h4>Sydney</h4>
+            <p>Beauty</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Sydney')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="destination__card" data-city="Dubai" data-image="dubai.jpg">
+          <img src="assets/destination-2.webp" alt="Dubai" loading="lazy" />
+          <div class="badge">4.5</div>
+          <div class="destination__details">
+            <h4>Dubai</h4>
+            <p>New</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Dubai')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="destination__card" data-city="Paris" data-image="paris.jpg">
+          <img src="assets/destination-3.png" alt="Paris" loading="lazy" />
+          <div class="badge">4.3</div>
+          <div class="destination__details">
+            <h4>Paris</h4>
+            <p>Love</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Paris')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div
+          class="destination__card"
+          data-city="Singapore"
+          data-image="singapore.jpg"
+        >
+          <img src="assets/destination-4.jpg" alt="Singapore" loading="lazy" />
+          <div class="badge">4.8</div>
+          <div class="destination__details">
+            <h4>Singapore</h4>
+            <p>Action</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Singapore')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div
+          class="destination__card"
+          data-city="Switzerland"
+          data-image="switzerland.jpg"
+        >
+          <img src="assets/destination-5.png" alt="Switzerland" loading="lazy" />
+          <div class="badge">4.2</div>
+          <div class="destination__details">
+            <h4>Switzerland</h4>
+            <p>Nature</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Switzerland')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div
+          class="destination__card"
+          data-city="Antarctica"
+          data-image="antarctica.jpg"
+        >
+          <img src="assets/destination-7.jpg" alt="Antarctica" loading="lazy" />
+          <div class="badge">4.7</div>
+          <div class="destination__details">
+            <h4>Antarctica</h4>
+            <p>Peace</p>
+          </div>
+          <button class="book-btn" onclick="bookNow('Antarctica')">
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="information"></section>
+
+    <section class="tour">
+      <div class="section__container tour__container">
+        <h4>Watch Our Video Tour</h4>
+        <div class="video__container">
+          <video
+            src="assets/videoTour.mp4"
+            autoplay
+            loop
+            muted
+            playsinline loading="lazy"
+          ></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container client__container" id="client">
+      <div class="section__header">
+        <h2 class="section__title">Clients Feedback</h2>
+      </div>
+      <div class="client__grid">
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-half-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+            </div>
+          </div>
+          <p>
+            I had the most incredible experience using this tour and travel
+            website. From booking my flights and accommodations to discovering
+            unique local activities, everything was seamless and well-organized.
+            It made my trip stress-free and unforgettable. I can't wait to plan
+            my next adventure with them!
+          </p>
+          <div class="client__card__footer">
+            <img src="assets/client-1.jpg" alt="client" />
+            <div class="client__details">
+              <h4>Mike Henderson</h4>
+              <p>Business Manager & CEO</p>
+            </div>
+          </div>
+        </div>
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+            </div>
+          </div>
+          <p>
+            As a frequent traveler, I've used various tour and travel websites,
+            but this one stands out for its attention to detail and personalized
+            recommendations. The itineraries they offer are thoughtfully
+            curated, and the insider tips on their blog were a game-changer for
+            my recent trip. Highly recommended! Thanks to them.
+          </p>
+          <div class="client__card__footer">
+            <img src="assets/client-2.jpg" alt="client" loading="lazy" />
+            <div class="client__details">
+              <h4>Paul Harrison</h4>
+              <p>Director</p>
+            </div>
+          </div>
+        </div>
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+            </div>
+          </div>
+          <p>
+            I'm not an experienced traveler, but this website made me feel like
+            a pro. The customer support team was incredibly helpful in guiding
+            me through the planning process, and their city guides provided
+            valuable insights. Thanks to them, I had a fantastic time exploring
+            a new city with confidence. I can't thank them enough!
+          </p>
+          <div class="client__card__footer">
+            <img src="assets/client-3.jpg" alt="client" loading="lazy" />
+            <div class="client__details">
+              <h4>John Williams</h4>
+              <p>Content Writer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="section__container subscribe__container">
+        <h4>Subscribe and be Updated</h4>
+        <form action="https://formspree.io/f/xanwyovr" method="POST" class="subscribe-form">
+          <div class="input-container">
+            <div class="phone-prefix">
+              <img src="assets/us-flag.png" alt="US Flag" class="flag-icon" />
+              <span class="country-code">+1</span>
+              <span class="separator">|</span>
+            </div>
+            <input
+              type="tel"
+              id="phone phone-separator"
+              placeholder="Phone Number"
+              name="phone"
+              pattern="\d{10}"
+              title="Phone number must be exactly 10 digits without any spaces or dashes."
+              required
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="10"
+            />
+          </div>
+          <span class="separator email-separator">|</span>
+          <div class="input-container email-container">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              name="email"
+            />
+          </div>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>    
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h5>LuxFlight Travel</h5>
+          <p>
+            LuxFlight offers business class flights to Europe, Asia, the Middle East, Africa, Australia and many more global destinations. Book cheap business class tickets with LuxFlight Travel today.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#destination">Destinations</a>
+          <a href="#subscribe">Write to Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer__col">
+          <h4>Features</h4>
+          <a href="#">Vacation Package</a>
+          <a href="#">List of Tours</a>
+          <a href="#">Gallery</a>
+          <a href="#">Travel on a Budget</a>
+        </div>
+        <div class="footer__col">
+          <h4>Follow Us</h4>
+          <div class="footer__socials">
+            <img src="assets/lets_stay_connected.svg" alt="" />
+            <span>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          *All the fares displayed are in USD and include all taxes, fees and
+          applicable surcharges. All prices are 'from' per person, based on
+          business class weekday travel (Monday - Thursday) from the USA, and
+          depend on the chosen class of service, departure city, airline and the
+          route. Lowest transatlantic fares are usually from the East Coast;
+          transpacific fares - from the West Coast, fares to Latin America -
+          from Florida. Flyluxury is not able to identify some travel partners
+          or itinerary details online so as not to directly compete with retail
+          sales of our partners. Savings up to 60% off are indicated of the full
+          unrestricted published prices of major airlines and may vary based on
+          individual fare rules. Some airlines may impose additional baggage
+          charges. The fares are subject to seat availability in the
+          corresponding booking inventory. Seats are limited and may not be
+          available on all flights and dates. The fares have flexible booking
+          policy: free exchange and/or cancellation is available now with our
+          partner airlines. In the event of trip cancellation, unless otherwise
+          stated, customers will retain travel credit with the issuing airline
+          for a period determined by the airline policy, excluding airline fees.
+          In the event of exchange, fare difference may apply. The fares and
+          their governing rules are subject to change without prior notice.
+          Other restrictions may apply.
+        </p>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 LuxFlight Travel. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="search-results.js"></script>
+  </body>
+</html>

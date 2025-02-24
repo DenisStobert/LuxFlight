@@ -1,0 +1,2866 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --primary-color: #f13033;
+  --primary-color-dark: #c3282b;
+  --secondary-color: #f9f9f9;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: none;
+}
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #03a9f4;
+  z-index: 9999; /* High z-index to make sure it covers everything */
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+.loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animate {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(1.2);
+  }
+  80%,
+  100% {
+    transform: scale(0);
+  }
+}
+.rocket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotating 2s linear infinite;
+  animation-delay: -1s;
+}
+@keyframes rotating {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(370deg);
+  }
+}
+.rocket::before {
+  content: "\f072";
+  font-family: fontAwesome;
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  color: #fff;
+  font-size: 60px;
+  transform: rotate(120deg);
+}
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.section__title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+.section__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section__nav span {
+  padding: 0 7px;
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  border: 1px solid var(--text-dark);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.section__nav span:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 2px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: #f0c8c9;
+  border-radius: 1rem;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--secondary-color);
+}
+
+.header {
+  position: relative;
+  min-height: 70vh;
+  color: var(--white);
+}
+.header__container {
+  position: relative;
+  z-index: 1; /* Ensures text and form are visible above the video */
+  text-align: center; /* Centers the content */
+  padding-top: 20%; /* Adjusts the position of inner content */
+}
+.hero-image {
+  background-image: url("assets/bg1.webp"); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  min-height: 1150px; /* 80% of the viewport height */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: #fff; /* Adjust text color based on your image */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  background-color: white;
+}
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch children to full width */
+}
+.full-width-info {
+  display: flex;
+  justify-content: space-evenly; /* Distribute space among children evenly */
+  color: white; /* Example text color */
+  padding: 20px 0; /* Padding for better spacing */
+  z-index: 100;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the icons and text */
+}
+
+.info-item i {
+  font-size: 35px; /* Example icon size */
+  margin-bottom: 8px; /* Space between icon and text */
+  color: var(--primary-color);
+}
+
+.info-item p {
+  text-align: center;
+  color: white;
+  text-transform: lowercase;
+}
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the opacity to make darker or lighter */
+  z-index: 1; /* Ensures the overlay is above the background image but below the text */
+}
+.how-to {
+  height: 100vh;
+}
+.other-deals {
+  padding: 20px;
+  margin-top: 50px; /* Space from the above content */
+}
+.other-deals h1{
+  text-align: center;
+}
+.deals-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.airline-deal {
+  background-color: rgba(23, 45, 40, 0.9); /* Light background for visibility */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px; /* Space between deals */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-around; /* Evenly space the contents horizontally */
+  align-items: center; /* Align items vertically */
+  min-width: 600px;
+  height: 85px;
+}
+.airline-logo-deal {
+  width: 60px !important;
+  height: 10px;
+  margin-right: 10px;
+}
+.airline-name, .airline-price, .flight-class {
+  flex: 1; /* Divide the space equally among children */
+  text-align: center;
+}
+
+.airline-name {
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+}
+
+.airline-price {
+  font-size: 20px;
+  color: #ffc496;
+  font-weight: bold;
+}
+
+.flight-class {
+  font-size: 14px;
+  color: #ccc;
+}
+
+#destination-city {
+  color: var(--primary-color); /* Use primary color variable for theming */
+  text-transform: uppercase;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center; /* Centers the grid items along the row */
+  padding: 20px; /* Adds padding around the grid for spacing */
+  margin: auto; /* Centers the entire grid container in the available space */
+  width: 100%; /* Ensures it takes full width up to the max width */
+  z-index: 999;
+  max-width: 1400px;
+}
+.autocomplete-dropdown {
+  display: none;
+  position: absolute;
+  width: 100%; /* Adjust width as needed */
+  max-height: 200px; /* Set max height for dropdown */
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none; /* Remove top border to align with input field */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1000; /* Ensure dropdown is above other elements */
+  color: #000;
+}
+.plusButton {
+  font-size: 14px;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+}
+
+.plusButton:hover {
+  background-color: #f4f4f4;
+}
+.autocomplete-dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Display ellipsis for overflow */
+  max-width: 200px; /* Limit the width of each item */
+}
+
+.autocomplete-dropdown li:hover {
+  background-color: #f4f4f4;
+}
+.price-box.best-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the items vertically */
+  padding: 20px;
+  background-color: rgba(23, 45, 40, 0.9); /* Change as needed */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  height: 340px;
+}
+.price-content {
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+  align-items: flex-start; /* Aligns content to the start */
+  margin-right: 20px; /* Adds some margin to separate from the divider */
+  flex-grow: 0; /* Prevents the box from growing to fill available space */
+  flex-shrink: 1; /* Allows the box to shrink to fit its content */
+  max-width: 200px;
+}
+.price-content p{
+  font-size: 13px;
+}
+.price-content h1 {
+  font-size: 1.7em; /* Set a base font size */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide any overflow text */
+  text-overflow: ellipsis; /* Display an ellipsis (...) if the text overflows */
+}
+.price-details {
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+  align-items: flex-start; /* Aligns content to the end */
+  flex-grow: 1; /* Allows the box to expand to use available space */
+  text-align: left;
+  margin-left: 20px; /* Adds some margin to separate from the divider */
+}
+.price-box img {
+  width: 100px;
+  height: auto;
+}
+.price-divider {
+  width: 50px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 20px; /* Space around the SVG */
+}
+.exclusive-deal {
+  border-top: 1px solid white;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+.exclusive-deal i {
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(20%);
+  margin-right: 20px;
+  color: var(--primary-color);
+}
+.best-price-text i {
+  margin-right: 5px; /* Space between icon and text */
+}
+.additional-details {
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: auto; /* Pushes the additional details to the bottom */
+  width: 100%; /* Ensures it takes the full width */
+}
+
+.form-section.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px; /* Add negative margins to counteract the padding for perfect alignment */
+}
+
+.form-section.row .sixth {
+  flex: 1 1 16.66%; /* Flex grow, flex shrink, flex-basis */
+  max-width: 16.66%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.form-section.row .sixth i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.form-section.row .sixth p {
+  margin-top: 0;
+  font-size: 14px;
+}
+.old-price {
+  color: white; /* Dim the old price */
+  text-decoration: line-through; /* Strike-through style */
+  margin-bottom: 10px; /* Space before the next line */
+  text-align: left;
+}
+.safe-text {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.safe-text span {
+  font-weight: bold;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want a dotted underline */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px; /* Add some margin to separate the tooltip from the content */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  cursor: pointer;
+}
+.time-limit {
+  font-size: 0.7rem; /* Smaller font size for emphasis */
+  color: white; /* Dark grey color for visibility */
+  font-style: italic; /* Italicize the timer */
+  text-align: left;
+}
+.time-limit span {
+  color: #ffc496;
+  font-weight: bold;
+}
+
+.price-box h2 {
+  color: #ffc496; /* Red color for the current price */
+  font-size: 40px;
+  margin: 10px 0; /* Space around the price */
+}
+.price-box,
+.flight-details {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.flight-details {
+  background-image: url("assets/travel.webp"); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Important for positioning the pseudo-element */
+  color: #ecf0f1;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures no child content spills outside the border radius */
+  z-index: 5;
+}
+
+.flight-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Darken the background */
+  border-radius: 10px;
+  z-index: 0; /* Set a higher z-index than the default */
+}
+
+/* Ensure that content is layered above the overlay */
+.flight-details * {
+  position: relative;
+  z-index: 1;
+}
+
+.price-box {
+  background-color: rgba(23, 45, 40, 0.9);
+}
+.price-box-content {
+  display: flex; /* Aligns children horizontally */
+  align-items: center; /* Centers items vertically */
+  justify-content: space-around; /* Distributes space around items */
+  width: 100%; /* Full width to fit parent */
+  margin-bottom: 20px;
+}
+.best-price-text {
+  text-align: center; /* Center the text horizontally */
+  width: 100%; /* Ensures it spans the full width */
+  margin-bottom: 20px; /* Space below the text */
+  font-size: 1.2rem; /* Larger font size for emphasis */
+  color: white; /* Dark color for visibility */
+  font-weight: 500;
+}
+.best-price-text i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+.best-price h1,
+.best-price h2 {
+  margin: 10px 0;
+}
+
+.old-price,
+.time-limit {
+  font-style: italic;
+}
+.form-section {
+  margin-bottom: -15px;
+  z-index: 1;
+}
+.form-section label {
+  display: block;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+.flight-details select {
+  width: 100%;
+  padding: 8px;
+  border: none !important; /* Removes the border */
+  background: none !important; /* Sets the background to be transparent */
+  color: white; /* Text color */
+  -webkit-appearance: none; /* Removes default style in WebKit browsers */
+  -moz-appearance: none; /* Removes default style in Mozilla browsers */
+  appearance: none; /* Removes default style */
+  cursor: pointer;
+  position: relative; /* Needed for positioning the custom arrow */
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Custom dropdown arrow */
+.flight-details .third {
+  position: relative; /* Sets the position context for the pseudo-element */
+}
+.flight-details option {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When select is focused, make options visible */
+.flight-details select:focus option {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rotate the arrow when the select box is focused */
+.flight-details .third.focused::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+/* Style the select when user interacts */
+.flight-details select:focus option {
+  outline: none; /* Removes the outline */
+  color: black;
+  border-radius: 0px;
+}
+.custom-select-wrapper {
+  position: relative;
+  width: 200px;
+}
+.dropdown {
+  position: relative;
+  z-index: 1001 !important; /* Ensures dropdown is above other items */
+}
+
+.select {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.caret {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ccc; /* Light color for the caret */
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+.error-message {
+  display: block; /* Ensure it's not inline */
+  width: 100%; /* Full width of the container */
+  color: red;
+  font-size: 12px;
+  text-align: left; /* Align text left within the error message */
+}
+
+input.error {
+  border: 1px solid red; /* Red border for error inputs */
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  background: #f9f9f9; /* Light background for the dropdown */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden; /* Use visibility to toggle display */
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1002;
+}
+
+.menu li {
+  padding: 10px;
+  cursor: pointer;
+  color: #333; /* Darker text for better readability */
+  transition: background-color 0.2s;
+}
+
+.menu li:hover, .menu li.active {
+  background: #e1e1e1; /* Light hover background */
+}
+
+.menu-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu li.active {
+  font-weight: bold;
+}
+.caret-rotate{
+  transform: rotate(-180deg);
+}
+.custom-select {
+  position: relative;
+  border-radius: 5px;
+  user-select: none;
+}
+.select-selected {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items div {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #000;
+  border-bottom: 1px solid #d1d1d1;
+  display: none;
+}
+.select-items div:last-child {
+  border-bottom: none;
+}
+.select-items div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.flight-details select:focus {
+  outline: none; /* Removes the outline when focused */
+  border: none; /* Ensures no border is visible */
+  background: transparent; /* Ensures the background is transparent */
+}
+.form-section select,
+.form-section input[type="text"],
+.form-section input[type="date"] {
+  width: 100%;
+  padding: 10px 0px 10px 15px; /* Adjust left padding to ensure text doesn't overlap the flag */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 24px 16px; /* Adjust the size of the flag */
+  background-position: 12px center; /* Position the flag within the padding area */
+  background-repeat: no-repeat;
+  position: relative; /* Needed for positioning of the country code */
+  z-index: 10 !important;
+  backdrop-filter: blur(3px);
+}
+
+.form-section select {
+  cursor: pointer;
+  appearance: none; /* Removes default styling */
+  background: rgba(0, 0, 0, 0.3) url('assets/dropdown-icon.png') no-repeat right 10px center; /* Custom dropdown icon */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third {
+  width: 33%; /* Adjusts the width to fit three elements in one row */
+  z-index: 10;
+}
+
+.half {
+  flex: 1; /* Allows each side to fill half the space */
+  position: relative;
+  text-align: center;
+  z-index: 3;
+  padding: 0 5px;
+}
+.flight-details h3,
+.flight-details div,
+.flight-details .quote {
+  margin-top: 10px;
+  z-index: 2;
+}
+.flight-details h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.flight-details input,
+.flight-details .quote {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Semi-transparent inputs for aesthetics */
+  color: white; /* Ensures text is visible */
+  z-index: 2;
+}
+.personal-info h3 {
+  padding: 20px 5px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.half input[type="text"], input[type="date"] {
+  width: 100%;
+  height: 70px; /* Increase height of input */
+  padding-top: 20px; /* Make space for the label inside the input */
+  padding-left: 10px;
+  border: 1px solid #ccc; /* Style as needed */
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 100;
+  font-size: 20px;
+}
+.half input[type="text"]:focus, input[type="date"]:focus {
+  border-color: #666;
+  outline: none;
+}
+.half label {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  padding: 0 5px;
+  margin-top: 5px; /* Adjust to center the label vertically in the top padding */
+  font-size: 10px;
+  color: white;
+  pointer-events: none; /* Makes the label non-interactive */
+  z-index: 100;
+}
+.personal-info input[type="text"],
+.personal-info input[type="email"] {
+  width: 100%;
+  padding: 10px 10px 10px 15px; /* Adjust left padding to ensure text doesn't overlap the flag */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 24px 16px; /* Adjust the size of the flag */
+  background-position: 12px center; /* Position the flag within the padding area */
+  background-repeat: no-repeat;
+  position: relative; /* Needed for positioning of the country code */
+  z-index: 2;
+  backdrop-filter: blur(3px);
+}
+.personal-info .input-group input[type="tel"] {
+  width: 100%;
+  padding: 10px 10px 10px 50px; /* Adjust left padding to ensure text doesn't overlap the flag */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: 24px 16px; /* Adjust the size of the flag */
+  background-position: 12px center; /* Position the flag within the padding area */
+  background-repeat: no-repeat;
+  position: relative; /* Needed for positioning of the country code */
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+.personal-info input[type="text"]:focus,
+.personal-info input[type="email"]:focus,
+.personal-info .input-group input[type="tel"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(241, 48, 51, 0.5); /* Add focus effect */
+}
+.input-group {
+  display: block; /* or 'flex' but ensure it handles child alignment properly */
+  position: relative;
+  width: 100%; /* Adjust based on your design needs */
+  z-index: 2;
+}
+
+.input-group::before {
+  content: "+1"; /* Country code */
+  position: absolute;
+  left: 40px; /* Adjust to place the code right after the flag */
+  top: 33%;
+  transform: translateY(-50%);
+  color: white; /* Match your design */
+  pointer-events: none; /* Makes it non-interactive */
+  z-index: 3;
+  font-weight: 500;
+}
+
+.personal-info .input-group input[type="tel"] {
+  padding-left: 65px; /* Adjust padding to accommodate flag and country code */
+}
+
+.flight-details .quote {
+  background-color: var(--primary-color); /* Green background */
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s ease;
+  z-index: 2;
+  margin-top: 10px;
+}
+.flight-details .quote:hover {
+  background-color: var(--primary-color-dark);
+}
+.from-to span,
+.dates span {
+  display: block;
+  z-index: 2;
+}
+.info {
+  z-index: 2;
+}
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 70vh; /* Full height */
+  overflow: hidden;
+}
+.video-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Adjust the opacity to make it lighter or darker */
+  z-index: 2; /* Ensure it's above the video but below the text content */
+}
+#heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: 1; /* Ensures the video stays behind the content */
+}
+.section__container.header__container {
+  position: relative;
+  z-index: 3; /* Ensures text and other elements are above the overlay */
+  text-align: center;
+}
+.airlines-text {
+  text-transform: uppercase;
+  font-size: 15px;
+  opacity: 0.5;
+}
+.airline-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+.savings-statement {
+  text-align: center;
+  font-size: 16px;
+  color: #f0cc7f;
+  line-height: 2;
+  margin-top: 3rem; /* Adds space above the statement */
+  font-style: italic;
+}
+.airline-logos img {
+  height: 70px; /* Sets a standard height for all logos */
+  width: 70px;
+  opacity: 0.5; /* Lowers the opacity to 0.5 */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.airline-logos img:hover {
+  opacity: 1; /* Full opacity when hovered */
+  scale: 1.5;
+  cursor: pointer;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
+nav.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+nav.scrolled li a {
+  color: black;
+}
+nav.scrolled .nav__logo span {
+  color: black;
+}
+.nav__logo,
+.nav__contact {
+  flex: 1; /* Allows these elements to take up equal space on the sides */
+}
+.nav__logo img {
+  width: 200px;
+  height: auto;
+}
+.nav__logo a {
+  display: flex; /* Aligns children inline */
+  align-items: center; /* Vertically centers the text with the image */
+  white-space: nowrap; /* Keeps the text on a single line */
+  text-decoration: none; /* Removes underline from links */
+}
+.menu-icon {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.logo-separator {
+  margin: 0 10px; /* Adds space around the separator */
+  font-size: 1.5rem; /* Matches the logo text size */
+  text-decoration: none;
+  color: #f0f0f0;
+}
+.logo-text {
+  font-size: 0.8rem; /* Smaller font size for the logo text */
+  color: #f0f0f0; /* Adjust color as needed */
+}
+.nav__links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 3; /* Gives the navigation links more space */
+  height: 100%;
+}
+.nav__logo-mobile {
+  display: none; /* Initially hidden */
+  width: 100%; /* Full width */
+  text-align: center; /* Center logo */
+  margin-bottom: 20px; /* Space between logo and links */
+}
+.nav__links li {
+  display: flex;
+  align-items: center;
+}
+.nav__links li a {
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: block;
+  line-height: 60px;
+  padding: 0 22px;
+  overflow: hidden;
+  border: none; /* Ensures no border is applied */
+}
+
+.nav__links li a::after {
+  content: "";
+  position: absolute;
+  width: 4px; /* Circle width */
+  height: 4px; /* Circle height */
+  border-radius: 50%;
+  background-color: var(--primary-color); /* Using CSS variable for color */
+  bottom: 10px; /* Adjusted for positioning */
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.25s ease-out;
+}
+
+.nav__links li a:hover::after,
+.nav__links li a.active::after {
+  transform: translateX(-50%) scale(1);
+}
+
+.nav__links li a.active,
+.nav__links li a:hover {
+  color: var(--primary-color); /* Standardize hover and active color */
+}
+
+/* Ensure no outlines are present */
+.nav__links li a:focus {
+  outline: none;
+}
+
+.nav__contact a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgba(241, 48, 51, 0.8);
+  border-radius: 15px;
+  padding: 10px 10px;
+  transition: all 0.2s ease;
+}
+.nav__contact a:hover {
+  background-color: var(--primary-color-dark);
+}
+.nav__contact span {
+  color: #333;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.nav__contact .flag-icon {
+  width: 25px;
+  height: 25px;
+}
+.link a {
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header__container {
+  padding: 5rem 1rem 10rem;
+}
+#addSegmentButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.smallButton {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: .3s ease;
+  color: white;
+  display: none;
+}
+.smallButton:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+.trash-icon {
+  cursor: pointer;
+  color: #fff; /* Adjust color as needed */
+  margin-top: 10px;
+  transition: .1s ease;
+}
+.trash-icon:hover{
+  color: #aaa;
+}
+.multi-city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Add some space between each multi-city row */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.multi-city .third {
+  width: calc(31% - 5px); /* Each input takes up 33.33% of the row minus 10px for spacing */
+}
+
+.multi-city input[type="text"],
+.multi-city input[type="date"] {
+  width: 100%; /* Adjust width as needed */
+  height: 70px; /* Increase height of input */
+  padding-top: 20px; /* Make space for the label inside the input */
+  padding-left: 10px;
+  border: 1px solid #ccc; /* Style as needed */
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.multi-city input[type="text"]:focus,
+.multi-city input[type="date"]:focus {
+  border-color: #666;
+  outline: none;
+}
+
+.multi-city label {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  padding: 0 5px;
+  margin-top: 5px; /* Adjust to center the label vertically in the top padding */
+  font-size: 10px;
+  color: white;
+  pointer-events: none; /* Makes the label non-interactive */
+  z-index: 100;
+}
+
+.third input[type="text"], input[type="date"] {
+  width: 100%;
+  height: 70px; /* Increase height of input */
+  padding-top: 20px; /* Make space for the label inside the input */
+  padding-left: 10px;
+  border: 1px solid #ccc; /* Style as needed */
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 100;
+  font-size: 20px;
+}
+.third input[type="text"]:focus, input[type="date"]:focus {
+  border-color: #666;
+  outline: none;
+}
+.multi-city input {
+  width: 100%;
+}
+
+.header__container h1 {
+  margin-top: 4rem;
+  max-width: 1000px;
+  margin-inline: auto;
+  font-size: 3.5rem;
+  color: var(--white);
+  text-align: center;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header__form form {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+.input__group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+.trip-type {
+  display: flex;
+  align-items: center;
+}
+
+.trip-option {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active {
+  color: #f00; /* Red color for active text */
+  border-bottom: 1px solid var(--primary-color);
+}
+
+input[type="date"]:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.input__group input[type="text"],
+.input__group input[type="date"],
+.input__group input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px; /* Adds space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="date"] {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input__group input[type="date"]:required:focus,
+.input__group input[type="text"]:required:focus,
+.input__group input[type="number"]:required:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(241, 48, 51, 0.5); /* Add focus effect */
+}
+.pac-container {
+  font-family: "Arial", sans-serif; /* Specify the font */
+  border-radius: 5px; /* Rounded corners for the dropdown */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.pac-item {
+  padding: 10px; /* More space around the items */
+  cursor: pointer; /* Make it clear it's selectable */
+}
+
+.pac-item:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+}
+
+.pac-item-query {
+  font-weight: bold; /* Make the matched text bolder */
+}
+.btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input__group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.input__group input {
+  max-width: 140px;
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+}
+.trending__container {
+  position: relative;
+  overflow: visible;
+}
+.trending__container::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  background-color: #333;
+}
+.trending__grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.trending__container .swiper {
+  width: 100%;
+  min-height: 60vh;
+}
+
+.trending__container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.trending__container .swiper {
+  min-height: 60vh;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000;
+  margin: -10px;
+}
+.swiper-pagination-bullet {
+  background: #000;
+}
+.trending__card {
+  flex: 1;
+  margin: 10px;
+  max-width: 330px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 40vh;
+}
+.trending__card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.trending__card:hover img {
+  filter: brightness(70%); /* Darkens the image */
+}
+.book-btn {
+  position: absolute;
+  top: 50%; /* Center vertically in the card */
+  left: 50%; /* Center horizontally in the card */
+  transform: translate(-50%, -50%); /* Offset the button to exactly center */
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: var(--primary-color);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 2; /* Ensure it's above the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+.trending__card:hover .book-btn {
+  opacity: 1; /* Make button visible when the image is hovered */
+}
+
+.book-btn i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.6); /* Black with opacity */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  backdrop-filter: blur(5px);
+}
+.modal-extra-text {
+  display: none; /* Hide by default on larger screens */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add some padding for spacing */
+  font-size: 14px; /* Set font size */
+  color: #666; /* Set text color */
+}
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  width: 75%; /* Width */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  animation-name: animatetop;
+  animation-duration: 0.5s;
+  /* Centering Techniques */
+  position: relative; /* Relative to modal */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+}
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -50%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  position: relative;
+  color: #aaaaaa;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 12px;
+  transform: 0.1s ease;
+}
+.close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 0 50px; /* Adjust for an upward-pointing triangle with the longest line inward */
+  border-color: var(--primary-color) transparent transparent transparent; /* Left border is the color of the triangle */
+  transform: translateX(0%) translateY(25%) scale(1.5); /* Position it to align with the corner */
+  z-index: -1; /* Ensures the triangle is behind the 'X' */
+  transition: 0.1s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close:hover::before {
+  border-color: #e9ecef transparent transparent transparent; /* Lightens the triangle on hover */
+}
+
+/* Modal Left Side with Full Background Image */
+.modal-left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(to right, #000 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.modal-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Modal Right Side with Form */
+.modal-right {
+  float: right;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-left h2,
+.modal-left p,
+.modal-left ul {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  margin: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.modal-left h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.modal-left .how-it-works {
+  font-weight: bold;
+  font-size: 20px;
+}
+.modal-left #modalPrice {
+  font-size: 60px;
+}
+.modal-left p {
+  font-size: 15px;
+}
+.modal-text {
+  white-space: nowrap; /* Prevents wrapping and ensures content stays on a single line */
+  overflow: hidden; /* Prevents content from spilling out of the element bounds */
+  text-overflow: ellipsis; /* Adds an ellipsis if the text overflows the element's width */
+}
+.modal-text #modalPrice {
+  margin-right: 10px; /* Space after the price */
+  margin-left: 10px; /* Space before the price */
+}
+
+.modal-left ul {
+  list-style: none; /* Styling for list */
+}
+.modal-left ul li span {
+  font-weight: bold;
+  margin-right: 15px;
+}
+/* Ensure that both columns inside modal are equally sized */
+.modal-body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Clear floats after the columns */
+.modal-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.call-info {
+  display: flex;
+  justify-content: space-around; /* Evenly space around each item */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 20px; /* Extra space below the row */
+}
+
+.call-info > div {
+  flex: 0 1 33%; /* Flex grow, flex shrink, and basis set to 33% */
+  text-align: center; /* Center the text within each block */
+  padding: 15px; /* Padding for spacing inside each block */
+}
+.call-action p {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+.call-action span {
+  color: var(--primary-color);
+}
+.phone-number {
+  background-color: var(--primary-color);
+  font-weight: bold; /* Make phone number stand out */
+  color: #fff; /* Optional: style the phone number with a distinct color */
+}
+
+.offline-deals {
+  font-style: italic; /* Style for emphasis */
+  font-size: 10px;
+}
+.second-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Needed for positioning pseudo-elements */
+  text-align: center;
+  margin: 0px 0;
+}
+
+.second-row::before,
+.second-row::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* Align vertically at the middle of the container */
+  width: 30%; /* Adjust the length of the lines as needed */
+  height: 1px; /* Line thickness */
+  background-color: #333; /* Line color */
+}
+
+.second-row::before {
+  left: 0%; /* Distance from the left side */
+}
+
+.second-row::after {
+  right: 0%; /* Distance from the right side */
+}
+
+.booking-call,
+.offer-request {
+  width: 100%;
+  margin: 0px 0;
+  padding: 0 20px; /* Adds padding to prevent text from overlapping with lines */
+  z-index: 1; /* Ensures text appears above the lines */
+  position: relative;
+}
+.phone-number a {
+  text-decoration: none; /* Removes underline from the link */
+  color: #fff;
+  font-weight: bold; /* Makes the font bold */
+  font-size: 18px; /* Increases the font size */
+  transition: 0.2s ease;
+}
+.phone-number a:hover,
+.phone-number a:focus {
+  color: #000; /* Changes color when hovered or focused for better accessibility */
+}
+.booking-call {
+  font-weight: bold; /* Make the main call to action bold */
+}
+
+.offer-request {
+  font-style: italic; /* Optionally italicize the secondary option */
+}
+
+.modal-right .input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.modal-right .input-row-form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.modal-right .round-trip {
+  text-align: left;
+}
+.modal-right .one-way {
+  text-align: right;
+}
+.modal-right .input-group {
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.modal-right .input-trip {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.no-scroll {
+  overflow: hidden; /* Prevents scrolling on the body */
+  height: 100%; /* Optional: May help in some cases to limit body height */
+}
+.trip-option-form {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 2px solid transparent; /* Hidden underline by default */
+  transition: all 0.3s ease;
+}
+
+.trip-option-form.active,
+.trip-option-form:hover {
+  border-bottom: 2px solid var(--primary-color); /* Active/hover state underline */
+  color: var(--primary-color);
+}
+.modal-right .input-group:last-child {
+  margin-right: 0;
+}
+
+.modal-right .input-group label {
+  position: absolute;
+  top: -8px; /* Positions label slightly down from the top of the input */
+  left: 12px; /* Slight left margin within the input for padding effect */
+  margin: 0;
+  padding: 0 5px;
+  font-size: 12px; /* Smaller font size for the label inside the input */
+  color: #000; /* Label color */
+  background-color: #fff;
+  pointer-events: none; /* Allows clicks to pass through to the input element */
+  z-index: 50; /* Ensures the label is above the input text */
+  font-weight: 500;
+}
+.modal-right input[type="text"],
+.modal-right input[type="email"],
+.modal-right input[type="tel"],
+.modal-right input[type="date"] {
+  width: 100%;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.modal-right input[type="text"]:required:focus,
+.modal-right input[type="email"]:required:focus,
+.modal-right input[type="tel"]:required:focus,
+.modal-right input[type="date"]:required:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0 0 5px rgba(241, 48, 51, 0.5) !important;
+}
+
+.modal-right button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px; /* More space above the submit button */
+}
+
+.modal-right button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.book-btn:hover i {
+  transform: rotate(
+    90deg
+  ); /* Rotates the icon 90 degrees when button is hovered */
+}
+
+.book-btn:hover {
+  background-color: var(--primary-color-dark); /* Darker color on hover */
+}
+.trending__card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.trending__card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.trending__details,
+.trending__ratings,
+h1,
+p,
+h5 {
+  padding: 0 20px;
+}
+.trending__details {
+  padding-block: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trending__details p {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.trending__details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.trending__ratings span {
+  font-size: 0.9rem;
+  color: goldenrod;
+}
+
+.trending__ratings p {
+  text-align: right;
+}
+
+.trending__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.swiper-container {
+  margin-top: 20px; /* Adjust based on your layout */
+  overflow: visible; /* Change if it's set to hidden */
+  padding: 10px 0; /* Add padding to prevent cutting off */
+}
+.trending__card h5 span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.trending__card p span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.trending__card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  scale: 1.1;
+  cursor: pointer;
+  z-index: 10;
+}
+.book {
+  font-size: 2rem;
+  white-space: nowrap; /* Keeps the title in one line */
+  text-align: center; /* Center the title */
+  width: 100%; /* Ensure it spans the full width of its container */
+  margin-bottom: 50px;
+}
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.how-to-book {
+  justify-content: space-between; /* Ensures even spacing between elements */
+  align-items: center;
+  padding: 50px 0;
+  background-color: var(--secondary-color);
+  width: 100%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.step {
+  flex: 1 0 20%; /* Each step and line will now take exactly 20% of the space */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px; /* Minimum width of each step */
+}
+
+.step-span {
+  font-weight: bold;
+}
+
+.step img {
+  width: 75px; /* Adjust if needed */
+  height: 75px;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+.step img:hover {
+  transform: translateY(-10px); /* Adds hover effect to the images */
+}
+
+.step p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  padding: 0 10px;
+  max-width: none;
+  width: auto;
+}
+
+.destination__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 350px repeat(3, 1fr);
+  grid-auto-rows: max-content;
+  gap: 1.5rem;
+}
+
+.destination__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.destination__card:nth-child(1) {
+  grid-area: 1/1/3/2;
+}
+
+.destination__card:nth-child(2) {
+  grid-area: 1/2/2/4;
+}
+.destination__card:nth-child(3) .book-btn,
+.destination__card:nth-child(4) .book-btn,
+.destination__card:nth-child(5) .book-btn,
+.destination__card:nth-child(6) .book-btn {
+  font-size: 12px;
+}
+.destination__card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.destination__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* Transparent by default */
+  transition: background 0.3s ease;
+  border-radius: 10px; /* Matches image border-radius */
+  z-index: 1;
+}
+.destination__card:hover::before {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay on hover */
+}
+.destination__card:hover img {
+  transform: scale(1.1);
+}
+.book-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0; /* Initially hidden */
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure it's above the image */
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  display: flex; /* Ensures the text and icon are inline */
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center;
+}
+.book-btn i {
+  margin-left: 10px; /* Space between text and icon */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+.destination__card:hover .book-btn {
+  opacity: 1; /* Appears when hovering the card */
+}
+.book-btn:hover {
+  background-color: var(--primary-color-dark);
+}
+.book-btn:hover i {
+  transform: rotate(90deg); /* Rotates the icon 90 degrees */
+}
+.destination__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.destination__details h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.destination__details p {
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.seller__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.seller__image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.seller__image__content {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.seller__image .badge {
+  left: unset;
+  right: 1rem;
+}
+
+.seller__image__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.seller__price p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.seller__price h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.seller__image__footer .btn {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.seller__details {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.seller__details h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.seller__details p {
+  color: var(--text-light);
+}
+
+.seller__card:hover .seller__image__content {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.tour {
+  margin-bottom: 2rem;
+  background-image: url("assets/tour.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tour__container {
+  padding-bottom: 0;
+}
+
+.tour__container h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+.video__container {
+  position: relative; /* Ensures absolute positioning of the video relative to this container */
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  height: 300px;
+  overflow: hidden; /* Keeps any oversized parts of the video hidden */
+  background-color: var(--text-light);
+  transform: translateY(2rem);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+}
+
+.video__container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the video perfectly within the container */
+  width: 100%; /* Adjust to cover the container width */
+  height: 100%; /* Adjust to cover the container height */
+  object-fit: cover; /* Ensures the video covers the area without distorting aspect ratio */
+  z-index: 1; /* Keeps the video behind any overlaid content */
+}
+.guide__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.guide__card {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.guide__image {
+  position: relative;
+}
+
+.guide__socials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.guide__card:hover .guide__socials {
+  opacity: 1;
+}
+
+.guide__socials > div {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.guide__socials a {
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 100%;
+}
+
+.guide__socials .btn {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.guide__content {
+  padding: 1.5rem;
+}
+
+.guide__details {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.guide__details h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.guide__card .guide__details p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.guide__card p {
+  color: var(--text-light);
+}
+
+.guide__card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client__card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.client__card__header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.client__card__header span {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.client__card__header .ratings span {
+  font-size: 1.2rem;
+  color: goldenrod;
+}
+
+.client__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.client__card__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client__card__footer img {
+  max-width: 60px;
+  border-radius: 100%;
+}
+
+.client__card__footer h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.client__card__footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.client__card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.input-container {
+  width: 100%; /* Ensures input containers take full width of the form */
+  display: flex;
+  justify-content: center; /* Centers the flag, country code, and input field horizontally */
+  align-items: center;
+}
+
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  margin-right: 5px; /* Space between prefix and input */
+}
+.separator,
+.input-separator {
+  color: #64748b; /* Match the secondary text color */
+  margin: 0 10px; /* Space around separators */
+  font-size: 1rem; /* Ensure it matches the size of the input text */
+  align-self: center; /* Vertically aligns with the inputs */
+}
+.flag-icon {
+  width: 24px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.country-code {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+input[type="tel"],
+input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1; /* Allows input fields to take up remaining space */
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.subscribe {
+  background-image: url("assets/subscribe.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.subscribe__container h4 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+}
+.subscribe__container form {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe__container input {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col p {
+  max-width: 300px;
+  color: var(--text-light);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col a {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__socials span a {
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+}
+
+.footer__socials span a:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color-dark);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+}
+.footer-info p {
+  margin-bottom: 10px; /* Space between paragraphs */
+  line-height: 1.6; /* Increase line height for better readability */
+  font-size: 0.6rem;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(20%);
+}
+
+@media (width < 1272px) {
+  .destination__grid {
+    gap: 1rem;
+  }
+  .nav__links li a {
+    font-size: 12px;
+  }
+  .nav__contact a {
+    font-size: 12px;
+  }
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width < 1050px) {
+  .nav__logo img {
+    width: 120px;
+  }
+  .nav__logo span {
+    font-size: 10px;
+  }
+  .nav__contact a {
+    font-size: 12px;
+  }
+  .nav__links li a {
+    font-size: 12px;
+  }
+  .link a {
+    padding: 0;
+  }
+
+  .trending__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .destination__card:nth-child(1),
+  .destination__card:nth-child(2) {
+    grid-area: unset;
+  }
+
+  .seller__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .guide__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .footer__col:nth-child(4) {
+    grid-area: 2/1/3/2;
+  }
+}
+
+@media (width < 600px) {
+  .hero-wrapper {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  .hero-content {
+    width: 55%; /* Full width for the content */
+    padding: 10px; /* Adjust padding for better spacing */
+    display: block;
+  }
+  .other-deals{
+    display: none;
+  }
+  .price-box.best-price{
+    margin-top: 100px;
+  }
+  .flight-details{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .select{
+    font-size: 10px;
+  }
+  .menu li{
+    font-size: 12px;
+  }
+  .full-width-info{
+    opacity: 0;
+  }
+  .price-details{
+    display: none;
+  }
+  .subscribeForm{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .subscribeForm .btn{
+    margin-top: 10px;
+    width: 100%;
+  }
+  .email-separator{
+    margin-top: 20px;
+    margin-left: 75px;
+  }
+  .line-separator{
+    display: none;
+  }
+  #phone {
+    width: 150px;
+  }
+  nav{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .footer-info p {
+    width: 90%;
+    transform: translateX(5%);
+  }
+  .section__header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+    text-align: center; /* Ensure text is centered within each child */
+    margin-bottom: 30px;
+  }
+  .nav__logo img,
+  span {
+    z-index: 9999;
+  }
+  .nav__logo-mobile {
+    display: none; /* Keep it hidden by default on small screens */
+  }
+  .modal {
+    top: 60px; /* Start below the header */
+    height: calc(100% - 60px); /* Full height minus header height */
+    align-items: flex-start; /* Align to the top starting below the header */
+    display: flex; /* Ensures flex properties are enabled */
+    justify-content: center; /* Centers content horizontally in the modal */
+    display: none;
+  }
+  .modal-content {
+    width: 100%; /* Full width of the modal */
+    height: 100%; /* Full height of the modal */
+    position: absolute; /* Use absolute to fill the parent .modal */
+    top: 0;
+    left: 0;
+    transform: none; /* Remove the transform for full screen */
+    overflow: auto; /* Ensure content can scroll if needed */
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align content to the top */
+    justify-content: flex-start; /* Align content to the start horizontally */
+    flex-direction: column; /* Stack children vertically */
+    padding-top: 20px; /* Add space for the close button at the top */
+  }
+  .modal-right,
+  .modal-left {
+    width: 100%; /* Full width for both columns */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .modal-extra-text {
+    display: block; /* Show only on small screens */
+    background-color: #eee;
+    margin-top: 35px;
+  }
+  .modal-right .call-action p {
+    font-size: 10px;
+  }
+  .modal-right .phone-number a {
+    font-size: 12px;
+  }
+
+  /* Define new animation for sliding from the top */
+  @keyframes slideFromTop {
+    from {
+      top: -100%; /* Start from above the screen */
+      opacity: 0;
+    }
+    to {
+      top: 0; /* End at the top of the modal */
+      opacity: 1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 0px; /* Adjust if necessary to align with the header */
+    right: 0px; /* Keep it at the top-right corner */
+    z-index: 20; /* Ensure it is above all other modal content */
+  }
+  .swiper-slide {
+    flex-direction: column; /* Aligns cards vertically */
+  }
+
+  .trending__card {
+    flex: 0 0 100%; /* Forces each card to take full width of the slide */
+    margin: 15px 10px;
+  }
+  .how-to-book {
+    flex-direction: column; /* Stack the elements vertically */
+  }
+
+  .book {
+    writing-mode: horizontal-tb; /* Revert to horizontal text */
+    transform: rotate(0deg); /* No rotation */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+    margin-bottom: 50px;
+  }
+
+  .steps-container {
+    justify-content: center; /* Center the steps */
+  }
+
+  .step {
+    flex: 0 0 50%; /* Each step takes up half the width of the container */
+  }
+  .header__form form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .trending__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seller__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .guide__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .subscribe__container input {
+    padding: 0 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .airline-logos img:nth-of-type(n + 5) {
+    display: none;
+  }
+  .airlines-text {
+    display: none;
+  }
+  #flightSearchForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .nav__logo {
+    text-align: center;
+    flex: 1;
+  }
+  .nav__logo a {
+    justify-content: center; /* Center the content within the link */
+    display: flex;
+  }
+  .nav__logo a span {
+    font-size: 10px;
+  }
+  .nav__logo img {
+    margin: 0px auto; /* Center the image */
+  }
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    transform: translateY(-100vh);
+    transition: transform 0.5s ease;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .nav__links li a {
+    font-size: 20px;
+    color: #000;
+  }
+  .nav__contact {
+    display: none; /* Hide the contact info by default on mobile */
+    position: absolute; /* Position it over the nav links */
+    width: 100%; /* Full width */
+    top: 0; /* Align to the top of the nav container */
+    background: #fff; /* Match the background to nav links for consistency */
+    text-align: center; /* Center the contact info */
+    padding: 10px 0; /* Add some padding */
+    border-bottom: 1px solid #ccc; /* Optional: add a separator */
+    z-index: 888;
+  }
+  .header__container h1 {
+    font-size: 40px;
+    margin-top: 0px;
+  }
+  .email-separator {
+    display: none;
+  }
+  .email-container{
+    display: none;
+  }
+  .menu-icon {
+    display: block; /* Ensure the menu icon is visible */
+    position: absolute; /* Positioning it to the left */
+    left: 10px; /* Space from the left edge */
+    top: 10px; /* Space from the top */
+    font-size: 24px; /* Adjust size as necessary */
+    z-index: 1001;
+  }
+  .menu-icon a {
+    text-decoration: none;
+    color: #000;
+  }
+  .trip-type {
+    margin-bottom: 10px;
+  }
+  #flightSearchForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    gap: 20px; /* Space between rows and columns */
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Optional: limit the maximum width of the form */
+    margin: auto; /* Center the form horizontally */
+    padding: 20px; /* Padding around the form */
+  }
+
+  #flightSearchForm .input__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the contents of the input group */
+  }
+
+  #flightSearchForm .input__group input,
+  #flightSearchForm .input__group label {
+    width: 100%; /* Inputs and labels take full width of their container */
+    text-align: center; /* Center text inside input and labels */
+  }
+
+  #flightSearchForm .btn,
+  #flightSearchForm .full-width {
+    grid-column: span 2; /* Make the button and any full-width inputs extend across all columns */
+  }
+}

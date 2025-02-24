@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="search-results.css" />
+    <title>Business Class Flights: 75% OFF on Business Class Airfare Deals - LuxFlight Travel</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="search-results.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3AP2WmC5MY8fOBIPVd66YmkD8u8nbcts&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="loader-wrapper">
+      <div class="loader">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+        <div class="rocket"></div>
+      </div>
+    </div>
+    <header class="header">
+      <nav class="main-nav">
+        <div class="menu-icon">
+          <a href="javascript:void(0);" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+            <!-- FontAwesome icon -->
+          </a>
+        </div>
+        <div class="nav__logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+            <span class="logo-separator">|</span>
+            <span class="logo-text">Comfort you can afford</span>
+          </a>
+        </div>
+        <ul class="nav__links">
+          <div class="nav__logo-mobile">
+            <img src="assets/logo.png" alt="Logo" />
+            <!-- Ensure this is the correct path -->
+          </div>
+          <li class="link"><a href="index.html#home" class="active">Home</a></li>
+          <li class="link"><a href="index.html#trending">Trending</a></li>
+          <li class="link"><a href="index.html#destination">Destinations</a></li>
+          <li class="link"><a href="index.html#guide">Guide</a></li>
+          <li class="link"><a href="index.html#client">Client</a></li>
+        </ul>
+        <div class="nav__contact">
+          <a href="tel:833-283-1657"
+            ><img
+              src="assets/us-flag.png"
+              alt="US Flag"
+              class="flag-icon"
+            /><span>+1</span> (833) 283-1657</a
+          >
+        </div>
+      </nav>
+      <div class="hero-image">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+          <!-- Best Price Box -->
+            <div class="price-box best-price">
+              <p class="best-price-text">
+                <i class="fa-solid fa-crown"></i>BEST PRICE
+              </p>
+              <div class="price-box-content">
+                <div class="price-content">
+                  <h1>DESTINATION PLACEHOLDER</h1>
+                  <p>Business Class, Round Trip, Total</p>
+                </div>
+                <img
+                  src="assets/best-price.svg"
+                  alt="Divider"
+                  class="price-divider"
+                />
+                <div class="price-details">
+                  <p class="old-price">old price: $2190.00</p>
+                  <h2 id="flightPrice">$1830.00*</h2>
+                  <p class="time-limit">
+                    Price expires in <span id="timer">17 h:32 min</span>
+                  </p>
+                </div>
+              </div>
+              <div class="exclusive-deal">
+                <i class="fa-solid fa-fire"></i> EXCLUSIVE DEAL UP TO 70% OFF ONLINE PRICE
+              </div>
+              <div class="other-deals">
+                <h1>OTHER DEALS TO <span id="destination-city">City Name</span></h1>
+                <div class="deals-container" id="deals-container">
+                    <!-- Deals will be dynamically added here -->
+                </div>
+              </div>            
+            </div>
+            
+            
+
+          <!-- Flight Details Box -->
+          <div class="flight-details">
+            <h3>FLIGHT DETAILS</h3>
+            <div class="form-section row">
+              <div class="third">
+                  <div class="dropdown">
+                    <div class="select">
+                      <span class="selected">Round Trip</span>
+                      <div class="caret"></div>
+                    </div>
+                    <ul class="menu">
+                      <li class="active">Round Trip</li>
+                      <li>One Way</li>
+                      <li>Multi City</li>
+                    </ul>
+                  </div>
+              </div>
+              <div class="third">
+                <div class="dropdown">
+                  <div class="select">
+                    <span class="selected">1 Passenger</span>
+                    <div class="caret"></div>
+                  </div>
+                  <ul class="menu">
+                    <li class="active">1 Passenger</li>
+                    <li>2 Passengers</li>
+                    <li>3 Passengers</li>
+                    <li>4 Passengers</li>
+                    <li>5 Passengers</li>
+                    <li>6+ Passengers</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="third">
+                <div class="dropdown">
+                  <div class="select">
+                    <span class="selected">Business</span>
+                    <div class="caret"></div>
+                  </div>
+                  <ul class="menu">
+                    <li class="active">Business</li>
+                    <li>First</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+            <form id="quoteForm">
+            <div class="form-section row">
+              <div class="half">
+                <label for="from">From</label>
+                <input type="text" id="from" placeholder="Departure Airport" required>
+                <ul class="autocomplete-dropdown" id="fromAutocompleteDropdown"></ul>
+              </div>
+              <div class="half">
+                <label for="to">To</label>
+                <input type="text" id="to" placeholder="Arrival Airport" required>
+                <ul class="autocomplete-dropdown" id="toAutocompleteDropdown"></ul>
+              </div>
+            </div>
+            <div class="form-section row">
+              <div class="half">
+                <label for="departure">Departure</label>
+                <input type="date" id="departure" required>
+              </div>
+              <div class="half">
+                <label for="return">Return</label>
+                <input type="date" id="return" required>
+              </div>
+            </div>
+            <div class="form-section row" id="multiCitySection">
+              <!-- These divs will be replaced when the + button is clicked -->
+            </div>
+            <div id="addSegmentButtonWrapper">
+              <button id="addSegmentButton" class="smallButton" type="button">+</button>
+            </div>
+            <div class="personal-info">
+              <h3>Personal Information</h2>
+              <input type="text" placeholder="Enter your name" required />
+              <input type="email" placeholder="Enter your email" required />
+              <div class="input-group">
+                <input
+                  type="tel"
+                  id="phone-input"
+                  placeholder="Enter your number"
+                  style="background-image: url('assets/us-flag.png')"
+                  required
+                />
+              </div>
+            </div>
+            <button class="quote" type="button" id="submitQuoteButton" onclick="submitQuote()">Get a Free Quote</button>
+          </form>
+            <p class="safe-text"><span>100% Safe. No purchase required.</span> I agree to provide my phone number and to be contacted by clicking “Get a Free Quote”. Your privacy is respected. Terms of Service.</p>
+          </div>
+        </div>
+        <div class="full-width-info">
+          <div class="info-item">
+            <i class="fa-solid fa-headset"></i>
+            <p>24/7 Live Support</p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-people-arrows"></i>
+            <p>Swap Engines for Humans</p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-map"></i>
+            <p>Complex Itineraries</p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-tag"></i>
+            <p>Exclusive Deals</p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <p>Last Minute Bookings</p>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            <p>10+ Years of Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+    <section class="how-to-book" id="guide">
+      <h1 class="book">How To Book</h1>
+      <div class="steps-container">
+        <div class="step" id="step1">
+          <img src="assets/step1.png" alt="Step 1" />
+          <p>
+            <span class="step-span">Step 1:</span> <br />Enter your flight details
+          </p>
+        </div>
+        <div class="step" id="step2">
+          <img src="assets/step2.png" alt="Step 2" />
+          <p>
+            <span class="step-span">Step 2:</span> <br />Fill your contact
+            information
+          </p>
+        </div>
+        <div class="step" id="step3">
+          <img src="assets/step3.png" alt="Step 3" />
+          <p>
+            <span class="step-span">Step 3:</span> <br />Your personal travel
+            advisor will contact you
+          </p>
+        </div>
+        <div class="step" id="step4">
+          <img src="assets/step4.png" alt="Step 4" />
+          <p>
+            <span class="step-span">Step 4:</span> <br />Check your mail and
+            choose the best deal
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="section__container subscribe__container">
+        <h4>Subscribe and be Updated</h4>
+        <form action="https://formspree.io/f/xanwyovr" method="POST" class="subscribe-form">
+          <div class="input-container">
+            <div class="phone-prefix">
+              <img src="assets/us-flag.png" alt="US Flag" class="flag-icon" />
+              <span class="country-code">+1</span>
+              <span class="separator">|</span>
+            </div>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone Number"
+              name="phone"
+              pattern="\d{10}"
+              title="Phone number must be exactly 10 digits without any spaces or dashes."
+              required
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="10"
+            />
+          </div>
+          <span class="separator email-separator">|</span>
+          <div class="input-container email-container">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              name="email"
+            />
+          </div>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h5>LuxFlight Travel</h5>
+          <p>
+            Welcome to LuxFlight Travel, our tour and travel website is your
+            gateway to a world of wanderlust-inducing experiences.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#destination">Destinations</a>
+          <a href="#subscribe">Write to Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer__col">
+          <h4>Features</h4>
+          <a href="#">Vacation Package</a>
+          <a href="#">List of Tours</a>
+          <a href="#">Gallery</a>
+          <a href="#">Travel on a Budget</a>
+        </div>
+        <div class="footer__col">
+          <h4>Follow Us</h4>
+          <div class="footer__socials">
+            <img src="assets/lets_stay_connected.svg" alt="" />
+            <span>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </span>
+            <span>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>*All the fares displayed are in USD and include all taxes, fees and applicable surcharges. All prices are 'from' per person, based on business class weekday travel (Monday - Thursday) from the USA, and depend on the chosen class of service, departure city, airline and the route. Lowest transatlantic fares are usually from the East Coast; transpacific fares - from the West Coast, fares to Latin America - from Florida.
+          Flyluxury is not able to identify some travel partners or itinerary details online so as not to directly compete with retail sales of our partners. Savings up to 60% off are indicated of the full unrestricted published prices of major airlines and may vary based on individual fare rules. Some airlines may impose additional baggage charges.
+          The fares are subject to seat availability in the corresponding booking inventory. Seats are limited and may not be available on all flights and dates. The fares have flexible booking policy: free exchange and/or cancellation is available now with our partner airlines. In the event of trip cancellation, unless otherwise stated, customers will retain travel credit with the issuing airline for a period determined by the airline policy, excluding airline fees. In the event of exchange, fare difference may apply.
+          The fares and their governing rules are subject to change without prior notice. Other restrictions may apply.</p>
+    </div>
+      <div class="footer__bar">
+        Copyright © 2024 LuxFlight Travel. All rights reserved.
+      </div>
+    </footer>
+    <script src="search-results.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </body>
+</html>

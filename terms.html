@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - LuxFlight Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    :root {
+  --primary-color: #f13033;
+  --primary-color-dark: #c3282b;
+  --secondary-color: #f9f9f9;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+    body {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #000;
+  height: 60px;
+}
+.subscribe {
+  background-image: url("assets/subscribe.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 300px;
+}
+.input-container {
+  width: 100%; /* Ensures input containers take full width of the form */
+  display: flex;
+  justify-content: center; /* Centers the flag, country code, and input field horizontally */
+  align-items: center;
+}
+.subscribe__container h4 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.subscribe__container form {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.section__container {
+  margin: auto;
+  padding: 5rem 1rem;
+}
+.section__container.header__container {
+  position: relative;
+  z-index: 3; /* Ensures text and other elements are above the overlay */
+  text-align: center;
+}
+.subscribe__container input {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  margin-right: 5px; /* Space between prefix and input */
+}
+.separator,
+.input-separator {
+  color: #64748b; /* Match the secondary text color */
+  margin: 0 10px; /* Space around separators */
+  font-size: 1rem; /* Ensure it matches the size of the input text */
+  align-self: center; /* Vertically aligns with the inputs */
+}
+.flag-icon {
+  width: 24px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  background-color: #f13033;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #c3282b;
+}
+.country-code {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+input[type="tel"],
+input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1; /* Allows input fields to take up remaining space */
+  border-color: transparent;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left .logo {
+  height: 80px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.nav-left .nav-items {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-left .nav-items li {
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+    main {
+      max-width: 70%;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .revised{
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+        margin-bottom: 50px;
+        margin-top: 10px;
+    }
+    h1{
+        color: #000000;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+        color: #000000;
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ol {
+        counter-reset: item;
+        list-style: none;
+        padding-left: 1em;
+    }
+
+    ol > li {
+        counter-increment: item;
+    }
+
+    ol > li::before {
+        content: counters(item, ".") ". ";
+    }
+    .nav-left .nav-items li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 150px;
+}
+
+.contact-info,
+.agent-info {
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact-info i {
+  color: #ffc496;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.contact-info p,
+.agent-info p {
+  margin: 0;
+}
+footer{
+  padding: 0 15%;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col p {
+  max-width: 300px;
+  color: var(--text-light);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col a {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__socials span a {
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  text-decoration: none;
+}
+
+.footer__socials span a:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color-dark);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+}
+.footer-info p {
+  margin-bottom: 10px; /* Space between paragraphs */
+  line-height: 1.6; /* Increase line height for better readability */
+  font-size: .6rem;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(20%);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="nav-left">
+          <img src="assets/logo.png" alt="Logo" class="logo" />
+          <ul class="nav-items">
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">REVIEWS</a></li>
+            <li><a href="privacy.html">PRIVACY POLICY</a></li>
+            <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> chad@luxflighttravel.com</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (833) 283-1657</p>
+          </div>
+        </div>
+      </nav>
+  </header>
+  <main>
+    <h1>Terms and Conditions</h1>
+    <p class="revised">Last Revised on December 3, 2024</p>
+    <h2>Agreement between you (customer) and LuxFlight Travel</h2>
+    <p>
+        Welcome to the luxflighttravel.com website (the "Website" or “Site”). This Website is provided solely to assist customers in gathering travel information, determining the availability of travel-related goods and services, making legitimate reservations, or otherwise transacting business with travel suppliers, and for no other purposes. The terms "we", "us", "our", “LuxFlight Travel” refer to a travel agency focusing on the sale of business class air travel to corporate and high-end leisure customers. The term "you" refers to the customer visiting the Website and/or booking a reservation through our customer service agents.
+    </br></br>
+        Disputes. The exclusive means of resolving any dispute or claim arising out of or relating to this Agreement (including any alleged breach thereof), the Service, or the Website shall be BINDING ARBITRATION administered by the American Arbitration Association. The one exception to the exclusivity of arbitration is that you have the right to bring an individual claim against the Company in a small-claims court of competent jurisdiction. But whether you choose arbitration or small-claims court, you may not under any circumstances commence or maintain against the Company any class action, class arbitration, or other representative action or proceeding. By using the Website or any our Services in any manner, you agree to the above arbitration agreement. In doing so, YOU GIVE UP YOUR RIGHT TO GO TO COURT to assert or defend any claims between you and the Company (except for matters that may be taken to small-claims court). YOU ALSO GIVE UP YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION OR OTHER CLASS PROCEEDING. Your rights will be determined by a NEUTRAL ARBITRATOR, NOT A JUDGE OR JURY. You are entitled to a fair hearing before the arbitrator. The arbitrator can grant any relief that a court can, but you should note that arbitration proceedings are usually simpler and more streamlined than trials and other judicial proceedings. Decisions by the arbitrator are enforceable in court and may be overturned by a court only for very limited reasons. Any proceeding to enforce this arbitration agreement, including any proceeding to confirm, modify, or vacate an arbitration award, may be commenced in any court of competent jurisdiction. In the event that this arbitration agreement is for any reason held to be unenforceable, any litigation against the Company (except for small-claims court actions) may be commenced only in the federal or state courts located in San Francisco, California. You hereby irrevocably consent to the jurisdiction of those courts for such purposes. This Agreement, and any dispute between you and the Company, shall be governed by the laws of the state of California without regard to principles of conflicts of law, provided that this arbitration agreement shall be governed by the Federal Arbitration Act. If a suit is brought to enforce any of the provisions of this Agreement, the Service or this Website, the prevailing party shall be paid by the other party all of the prevailing party’s costs and expenses of prosecuting and/or defending the suit, including, without limitation, the reasonable attorneys’ fees, court costs and expenses of the prevailing party. You can decline this agreement to arbitrate by filling out an arbitration opt out letter and sending it to our email info@luxflighttravel.com within 30 days of first accepting these Terms.
+    </br></br>   
+        This Website is offered to you considering conditioned upon your acceptance without modification of all the terms, conditions, and notices set forth below (collectively, the "Terms and Conditions” or "Agreement"), which may be revised when it is necessary. Please read these Terms and Conditions carefully, as they contain important information about limitations of liability and resolution of disputes through arbitration rather than in court. You should also read our Privacy Policy, which also governs your use of the Website. By accessing or using this Website, contacting our agents or purchasing / using our services, you’re acknowledging that you’ve read and understood that your use is subject to these Terms and Conditions and our Privacy Policy. If you do not agree to the Terms and Conditions, please do not use this Website, book any reservations or apply for any our services through our agents. We don’t sell, organise, or arrange any packages, you will not benefit from rights applying to packages under the EU Package Travel Regulations and we will not be responsible for the proper performance of those additional travel services.
+    </br></br>    
+        Under this agreement, the payment processing services for goods and/or services purchased on this website are provided by LuxFlight Travel on behalf of the airlines depending on the type of payment method used and on the type of services and goods.
+    </p>
+    <h2>Use of the website / our services</h2>
+    <p style="margin-bottom: 0; margin-top: 10px;">
+        As a condition of your use of this Website / our services, you warrant that:
+    </p>
+    <ol style="margin: 0; padding-left: 1em;">
+        <li>you are at least 18 years of age;</li>
+        <li>you possess the legal authority to create a binding legal obligation;</li>
+        <li>you will use this Website in accordance with these Terms and Conditions;</li>
+        <li>you will only use this Website services to make legitimate reservations for you or for another person for whom you are legally authorized to act;</li>
+        <li>you will inform such other persons about the Terms and Conditions that apply to the reservations/services you have made/ordered on their behalf, including all rules and restrictions applicable thereto;</li>
+        <li>all information supplied by you is true, accurate, current and complete;</li>
+        <li>neither you nor the person you’re buying tickets for are currently subject to any sanctions (economic, financial etc.), administered or enforced from time to time by the EU (its Member States), the United Nations Security Council, the US government, or any other relevant authorities with jurisdiction over you or us from time to time that would prohibit from using our services. We retain the right at our sole discretion to deny access to anyone to this Website and the services we offer, at any time and for any reason, including, but not limited to, for violation of these Terms and Conditions.</li>
+    </ol>
+    <h1>General Rules and Conditions</h1>
+    <h2>Conditions</h2>
+    <p style="margin-top: 10px;">
+        You accept that you’ll only use our services for personal use and you’ll only book tickets on behalf of yourself or someone you have the permission of. Name changes on tickets are not allowed – only the original passenger can use the ticket(s). Take special note that airline tickets and hotel accommodations and all service fees may not be refundable. If fare rules allow refunds and/or exchanges, a $250 (per person) processing fee will be charged in addition to any applicable fees charged by the carrier/provider upon cancellation/exchange. Fees will vary depending on the provider's terms and conditions. You will not receive a monetary refund when canceling. Instead, you will receive a credit (less any airline/hotel fees) towards a future ticket purchase on long haul international flights of equal or greater value, which will be valid for up to twelve (12) months from your original date of purchase.
+    </p>
+    <p>No-Show tickets cannot be refunded, nor can they be exchanged. Unless the reservation is cancelled and the trip rescheduled prior to the original departure date, the ticket is suspended and refunds are not possible.
+    </p>
+    <p>Please check your e-mail frequently for any schedule change notifications from the airline and verify the current flight information 72 hours prior to scheduled departure. The email address you give us must be correct, because we’ll use it to send your ticket confirmations and important travel information. Please check that our emails aren’t blocked by your internet service provider or sent to your spam folder. Failure to use any reservation will result in an automatic cancellation of all continuing and return flight reservations and suspension of the tickets. The ticket can be used only in the sequence it was issued. Out of sequence usage is not allowed. The recommended check-in time for all international flights is minimum 3 hours before departure time, even if you are traveling on a domestic flight to another airport to connect to your international flight.
+
+    </p>
+    <p>Airline tickets are subject to the published conditions of carriage and rules, including but not limited to, cancellation policies of the applicable airline. The contract of carriage in use by the applicable airline, when issued, shall be between the applicable airline and the passenger. Airlines retain the right to adjust flight times and schedules at any time - schedule changes can result in an itinerary that falls outside of contractual agreements. Airlines may also in their discretion change or cancel flights or itineraries. LuxFlight Travel is not responsible for schedule changes.
+
+    </p>
+    <p>If your ticket is not honored for any reason, please contact your agent immediately. Your ticket is guaranteed up to the amount paid for the ticket, and LuxFlight Travel will replace your ticket within 24 hours or offer a full refund, or provide other alternative options within 24 hours.
+
+    </p>
+    <p>Under consumer legislation, tickets aren’t subject to the right of withdrawal and you have no 14-day “cooling-off period” for bookings.
+
+    </p>
+    <p>Access to our website / services doesn’t grant you any intellectual property rights relating to them. You can’t under any circumstance copy, represent, change, transmit, or publish any part of our website or without clear written permission from us. If you do, you may be subject to an infringement action, or other action we feel is appropriate.
+
+    </p>
+    <h2>Baggage Allowance</h2>
+    <p style="margin-top: 10px;">
+        Travelers may have to pay additional fees at the airport if their checked items exceed the weight, size or number spelled out in the standard baggage allowance of the airline. Some airlines do not offer any free baggage allowance. Baggage allowance policies and baggage fees associated with checked or carry-on baggage vary widely and are subject to change by the airlines at any time.
+
+    </p>
+    <h2>Frequent Traveler Points</h2>
+    <p style="margin-top: 10px;">
+        Frequent traveler awards (miles, points etc.), upgrades, certificate vouchers and other discounts or incentives may not apply to LuxFlight Travel flights, hotel stays, or other travel services. Additionally, mileage accrual may not apply to all tickets. Please discuss this with your agent for more information.
+
+    </p>
+    <h2>Supplier Rules and Restrictions</h2>
+    <p style="margin-top: 10px;">
+        Additional terms and conditions will apply to your reservation and purchase of travel-related goods and services that you select from both airline and hotel suppliers. Please read these additional terms and conditions carefully on the airline or hotel or other accommodation providers websites. You agree to abide by the terms and conditions of purchase imposed by any supplier with whom you elect to deal, including, but not limited to, payment of all amounts when due and compliance with the suppliers rules and restrictions regarding availability and use of fares, products, or services. We reserve the right to cancel your booking if full payment is not received in a timely fashion. Some airline or hotel suppliers may require you to present a credit card or cash deposit upon check-in to cover additional expenses incurred during your travel. Such deposit is unrelated to any payment received by LuxFlight Travel for your booking. You acknowledge that some third-party providers offering certain services and/or activities may require you to sign their liability waiver prior to participating in the service and/or activity they offer. You understand that any violation of any such suppliers rules and restrictions may result in cancellation of your reservation(s), in your being denied access to the applicable travel product or services, in your forfeiting any monies paid for such reservation(s), and/or in our debiting your account for any costs we incur as a result of such violation.
+    </p>
+    <h2>Travel Destinations and Visa Requirements</h2>
+    <p style="margin-top: 10px;">
+        International travel requires that passengers have in possession a valid Passport, which must be presented for all international flights. Please note that some countries may require a visa and/or a health card. It is passengers responsibility to have all required travel documents in possession at check-in. It is strongly recommended that passengers review visa requirements for all stops as some countries may require a transit visa. Passengers transiting via or connecting between airports located in the European Union - Schengen Zone may need a Schengen Entry visa. Please contact the embassy of the country you are going to visit or transit through to get the up-to-date requirements. Some countries have special requirements for one way travel – it is travelers’ responsibility to make sure they meet eligibility criteria for one way travel. Visa information is also available at the Travel Advisory Section of the U.S. State Department (phone line: 202-647-5225, official website: www.state.gov). Holders of non-U.S. passports are advised to contact the embassies of their destination and transit countries to obtain entrance requirements.
+    </p>
+    <p>Although most travel, including travel to international destinations, is completed without incident, travel to certain destinations may involve greater risk than others. LuxFlight Travel urges passengers to review travel prohibitions, warnings, announcements and advisories issued by the European Union and United States Government prior to booking travel to international destinations. Information on conditions in various countries and the level of risk associated with travel to particular international destinations can be found at https://europa.eu/youreurope/citizens/travel/index_en.htm, www.state.gov, www.tsa.gov, www.dot.gov, www.faa.gov, www.cdc.gov and www.treas.gov/ofac.
+    </p>
+    <p>By offering for sale travel to particular international destinations, luxflighttravel.com does not represent or warrant that travel to such points is advisable or without risk, and is not liable for damages or losses that may result from travel to such destinations.
+    </p>
+    <h2>Exchanges, Cancellations and Refunds</h2>
+    <p style="margin-top: 10px;">
+        The confirmed tickets are non reroutable and non transferable. If fare rules allow refunds and/or exchanges, a LuxFlight Travel fee will be charged to process any refund and/or exchange request. This fee will be collected in addition to the penalties charged directly by the airline and/or recalled by the airline from LuxFlight Travel (recalled commissions). Reservations for tickets to be refunded and/or exchanged must be canceled at least 24 hours prior to scheduled departure time - NO SHOW ticket(s) will not be processed for refund and/or exchange. All exchanges are subject to fare difference and fare rules applicable on the date of change. Cancellation of reservation does not automatically initiate refund. All exchanges can be made only prior to scheduled departure. After the tickets are issued, any changes or refunds are subject to the restrictions of the fares used. Generally speaking, discounted fares are more restrictive and in many cases they are non refundable and non exchangeable. Please pay attention to the fare restrictions of your tickets. If you need more flexibility with your tickets in terms of refunds and exchanges, please consult your agent and request a less restrictive fare. Airlines offer a wide range of fares, including those that offer exchanges and refunds without any restrictions and penalties. The airlines strictly follow their policies, and do not permit exchanges or refunds in case the fare restrictions do not allow it. The airlines determine the restrictions of the fares, and LuxFlight Travel has no power to override these restrictions. Once the tickets are issued, they are subject to fare restrictions.
+    </p>
+    <h2>Ticket Delivery</h2>
+    <p style="margin-top: 10px;">
+        All the tickets sold by LuxFlight Travel are electronic tickets (e-Tickets) and will be sent to the email address provided by you during the booking. Once your electronic tickets are issued, you will receive an email confirmation which will include the ticket number, and the reservation numbers for each airline you’ll be traveling on.    </p>
+    <h2>Payment Information</h2>
+    <p style="margin-top: 10px;">
+        You’re agreeing that the card you pay with is yours (the card holder), or that you have the right to use the payment card if it’s not owned by you. LuxFlight Travel uses stringent safety measures for credit card payment processing. We accept all major credit cards: Visa, MasterCard, American Express, Diners Club, Discover. Credit card transactions are authorised at the time you or anyone acting on your behalf accepts these Terms & Conditions and continues with the purchase. All credit cards must have a verifiable EU, US, Canadian, UK, Australian, Singapore or other country billing address. When certain transactions are determined to be high risk by our systems, we will not process such transactions unless our credit card verification team has determined that its safe to process them. In order to establish validity of such transactions, we may contact you or your bank. Fraudulent transactions, if any, are reported to airport security, airlines and other federal and state law enforcement. Most credit card transactions over the phone to our Client Service Department are recorded and are available as evidence in case of any dispute. If your credit card is declined for any reason, we will notify you within 24 hours. Simply submitting the credit card does not automatically guarantee ticketing. All bookings and fares are not guaranteed until ticketed by the supplier.
+    </p>
+    <p>Some banks and credit cards impose fees for transactions. Your bank may convert the payment amount to your local currency and charge you a conversion fee. This means the amount listed on your credit or bank card statement may be in your local currency and therefore a different figure than the figure shown on the billing summary page for a reservation booked on the Website. In addition, a foreign transaction fee may be assessed if the bank that issued your credit card is located outside of the EU and/or United States. Booking international travel may be considered to be an international transaction by the bank or card company, since LuxFlight Travel may pass on your payment to an international travel supplier. The currency exchange rate and foreign transaction fee is determined solely by your bank on the day that they process the transaction. If you have any questions about these fees or the exchange rate applied to your booking, please contact your bank.
+    </p>
+    <h2>Limitations of liability</h2>
+    <p style="margin-top: 10px;">
+        Information contained on the website (including text, graphics, links or other material) are provided on an "as is," and "where available" basis. LuxFlight travel makes no representation or warranty, express or implied, to you or another person or entity as to the accuracy, results, timeliness, completeness, merchantability, fitness for any particular purpose, including but not limited to warranties arising by statute or otherwise in law or from a course of dealing or usage of trade, with respect to the website or any related materials, products, services, or information. Under no circumstances, including, but not limited to negligence, shall we, our providers or distributors, be liable for any damages to, or viruses that may infect, your computer equipment or other property, or any loss of data, on account of your access to, use of, or browsing on the website, or your downloading of any materials, data, text, images, video, audio, or other information from the website or associated with any email or links sent to you by LuxFlight Travel. In no event shall we, our providers or distributors, be liable for any injury, loss, claim, damage, or any special, punitive, exemplary, direct, indirect, incidental, or consequential damages of any kind (including, but not limited to, lost profits, lost business, or lost savings), whether based in contract, tort, strict liability, or otherwise, that arise out of or are in any way connected with the use, or the inability to use, the website or the services or materials on the website or the travel reservations booked through LuxFlight travel call center, even if advised of the possibility of such damages. in no event shall our aggregate liability, or that of our providers or distributors, exceed the total charges set forth in the itinerary giving rise to any such liability.
+    </p>
+    <p>Any claim or cause of action arising from, or relating to, your access and use of, or purchase of products and/or services from, the website must be communicated beforehand to LuxFlight Travel in order to reach a mutual agreement. Applicable law may not allow the limitation or exclusion of liability of incidental or consequential damages, so the above limitation or exclusion may not apply to you. Your use of the website shall be at your own risk. We are acting as an intermediary or as an agent for providers of travel-related products and/or services by promoting, selling or accepting reservations or bookings for such products and/or services (such as air transportation, hotel accommodations, meals, travel insurance, etc.) And are in no way liable for such providers products and services.
+
+    </p>
+    <p>The carriers, hotels and other suppliers providing travel or other services on this website are independent contractors and not agents or employees of the LuxFlight Travel or the its affiliates. LuxFlight Travel and its company affiliates are not liable for the acts, errors, omissions, representations, warranties, breaches or negligence of any such suppliers or for any personal injuries, death, property damage, or other damages or expenses resulting therefrom. LuxFlight Travel and the its affiliates have no liability and will make no refund in the event of any delay, cancellation, overbooking, strike, force majeure or other causes beyond their direct control, and they have no responsibility for any additional expense, omissions, delays, re-routing or acts of any government or authority.
+
+    </p>
+    <p>By using the Website and / or our services, you agree to irrevocably waive any claim against LuxFlight Travel, its subsidiaries or affiliates, and any of such parties officers, directors, managers, agents, contractors, or employees, and expressly agree that neither LuxFlight Travel, nor any of its subsidiaries, affiliates, officers, directors, managers, agents, contractors or employees, shall be held liable for:
+
+    </p>
+    <p>any loss of or damage to property or injury to any person caused by reason of any defect, negligence, or other wrongful act of omission of, or any failure of performance of any kind by any Travel Supplier; any inconvenience, loss of enjoyment, mental distress or other similar matter; any delayed departure, missed connections, substitutions of accommodations, terminations of service, or changes in fares and rates; any cancellation or double-booking of reservations or tickets beyond the reasonable control of LuxFlight Travel,; and any claim of any nature arising out of or in connection with air or other transportation services, products or other features performed (or not) or occurring (or not) in connection with your itinerary.
+
+    </p>
+    <p>For avoidance of doubt (and without limiting the foregoing), LuxFlight Travel does not assume any liability whatsoever for cancelled flights, flights that are missed, or flights not connecting due to any scheduled changes made by the relevant airline.
+
+    </p>
+    <p>The limitations specified in these Terms & Conditions shall survive and apply even if any limited remedy specified in these Terms & Conditions is found to have failed of its essential purpose. The limitations of liability provided in these Terms & Conditions inure to the benefit of LuxFlight Travel, its affiliates, and the suppliers of travel products and services purchased through our Website.
+
+    </p>
+    <h2>Resolution of Disputes</h2>
+    <p style="margin-top: 10px;">
+        Customer satisfaction is the foundation of our success. That’s why, if a dispute arises between us, our goal is to resolve the dispute quickly in a fair and cost-effective way. Accordingly, you agree to give us an opportunity to resolve any disputes or claims relating in any way to the Website, any dealings with our customer service agents, any services or products provided, any representations made by us by contacting LuxFlight Travel Customer Support at +1-855-507-9771 or cs@luxflighttravel.com or submitting a claim via an online form at Contact Us so that we have an opportunity to try to address your concerns.
+    </p>
+    <h2>Indemnification</h2>
+    <p style="margin-top: 10px;">
+        You agree to protect and indemnify LuxFlight Travel, its affiliates, partners, joint ventures and/or their respective suppliers and any of their respective officers, directors, managers, employees and agents from and against any claims, causes of action, demands, recoveries, losses, damages, fines, penalties or other costs or expenses of any kind or nature including but not limited to reasonable legal and accounting fees, brought by:
+    </p>
+    <ul style="margin: 0; padding-left: 0em; list-style-type: none;">
+        <li>- you or on your behalf in excess of the liability described above;
+        </li>
+        <li>- by third parties as a result of your breach of these Terms & Conditions, notices or documents referenced on the Website;
+            ;</li>
+        <li>- your violation of any law or the rights of a third party; or</li>
+        <li>- your use of the Website.</li>
+        </ul>
+        <h2>Warsaw Convention and Montreal Convention</h2>
+        <p style="margin-top: 10px;">
+            Passengers on a journey involving an ultimate destination or a stop in a country other than the country of departure are advised that international treaties known as the Montreal Convention, or its predecessor, the Warsaw Convention, including its amendments (the Warsaw Convention system), may apply to the entire journey, including any portion thereof within a country. For such passengers, the applicable treaty, including special contracts of carriage embodied in any applicable tariffs, governs and may limit the liability of the carrier.
+        </p>
+        <h2>Notice of liability limitations</h2>
+        <p style="margin-top: 10px;">
+            The Montreal Convention or the Warsaw Convention system may be applicable to your journey and these Conventions govern and may limit the liability of air carriers for death or bodily injury, for loss of or damage to baggage, and for delay.
+        </p>
+        <p>Where the Montreal Convention applies, the limits of liability are as follows:</p>
+        <p>There are no financial limits in respect of death or bodily injury.
+            In respect of destruction, loss of, or damage or delay to baggage, 1,100 Special Drawing Rights (approximately EUR 1,300; US $1,700) per passenger in most cases.</br>For damage occasioned by delay to your journey, 4,694 Special Drawing Rights (approximately EUR 5,400; US $7,100) per passenger in most cases.
+        </p>
+        <p>EC Regulation No. 889/2002 requires European Community carriers to apply the provisions of the Montreal Convention limits to all carriage by them of passengers and their baggage by air. Many non-European Community carriers have elected to do so in respect of the carriage of passengers and their baggage.
+
+        </p>
+        <p>Where the Warsaw Convention system applies, the following limits of liability may apply:
+
+        </p>
+        <p>16,600 Special Drawing Rights (approximately EUR 20,000; US $20,000) in respect of death or bodily injury if the Hague Protocol to the Convention applies, or 8,300 Special Drawing Rights (approximately EUR 10,000; US $10,000) if only the Warsaw Convention applies. Many carriers have voluntarily waived these limits in their entirety, and US regulations require that, for journeys to, from or with an agreed stopping place in the US, the limit may not be less than US $75,000. 17 Special Drawing Rights (approximately EUR 20; US $20) per kg for loss of or damage or delay to checked baggage, and 332 Special Drawing Rights (approximately EUR 400; US $400) for unchecked baggage. The carrier may also be liable for damage occasioned by delay.
+
+        </p>
+        <p>Further information may be obtained from the carrier as to the limits applicable to your journey. If your journey involves carriage by different carriers, you should contact each carrier for information on the applicable limits of liability.
+
+        </p>
+        <p>Regardless of which Convention applies to your journey, you may benefit from a higher limit of liability for loss of, damage or delay to baggage by making at check-in a special declaration of the value of your baggage and paying any supplementary fee that may apply. Alternatively, if the value of your baggage exceeds the applicable limit of liability, you should fully insure it before you travel.
+
+        </p>
+        <p>Time limit for action: Baggage claims: Written notice to the carrier must be made within 7 days of the receipt of checked baggage in the case of damage, and, in the case of delay, within 21 days from the date on which it was placed at the disposal of the passenger.
+
+        </p>
+        <h2>Notice of Contract Terms Incorporated by Reference</h2>
+        <ol style="margin-top: 10px; margin: 0; padding-left: 1em;">
+            <li>Your contract of carriage with the carrier that provides you with carriage by air, whether international, domestic or a domestic portion of an international journey is subject to this notice; to any notice or receipt of the carrier; and to the carriers individual terms and conditions (Conditions), related rules, regulations and policies (Regulations) and any applicable tariffs.
+            </li>
+            <li>If your carriage is by more than one carrier, different Conditions, Regulations and any applicable tariffs may apply for each carrier.
+            </li>
+            <li>The Conditions, Regulations and any applicable tariffs of each carrier are, by this notice, incorporated by reference into and made part of your contract of carriage.
+            </li>
+                <li>
+                    The Conditions may include, but are not restricted to:
+                    <ol style="margin-left: 0;" type="1">
+                        <li>Conditions and limits on the carriers liability for the bodily injury or death of passengers.</li>
+                        <li>Conditions and limits on the carriers liability for the loss of, damage to or delay of goods and baggage, including fragile or perishable goods.
+                        </li>
+                        <li>Rules for declaring a higher value for baggage and for paying any supplementary fee that may apply.
+                        </li>
+                        <li>Application of the carriers Conditions and limits of liability to the acts of the carriers agents, servants and representatives, including any person providing either equipment or services to the carrier.
+                        </li>
+                        <li>Claims restrictions, including time limits by which passengers must file claims or bring actions against the carrier.
+                        </li>
+                        <li>Rules about reconfirmations or reservations; check in times; the use, duration and validity of air transportation services; and the carrier's' right to refuse carriage.
+                        </li>
+                        <li>Rights of the carrier to refuse carriage to passengers who fail to comply with applicable laws or who fail to present all necessary travel documents.
+                        </li>
+                    </ol>
+                </li>
+                <li>You can obtain more information about your contract of carriage, and find out how to request a copy, at places where transportation on the carrier is sold.</br>Many carriers also have this information on their websites. When required by applicable law, you have the right to inspect the full text of your contract of carriage at the carriers airport and sales offices, and upon request, to receive a copy by mail or other delivery service from each carrier free of charge.
+                </li>
+                <li>If a carrier sells air transportation services or checks baggage specifying carriage on another carrier, it does so only as agent for the other carrier.
+                </li>
+        </ol>
+        <h3 style="font-weight: 500;">YOU CANNOT TRAVEL IF YOU DO NOT HAVE ALL REQUIRED TRAVEL DOCUMENTS, SUCH AS PASSPORT AND VISA.
+        </h3>
+        <h3 style="font-weight: 500; margin-bottom: 10px;">GOVERNMENTS MAY REQUIRE YOUR CARRIER TO PROVIDE INFORMATION ON OR PERMIT ACCESS TO PASSENGER DATA.
+        </h3>
+        <p style="margin-top: 0px;">DENIED BOARDING: Airline flights may be overbooked, and there is a slight chance that a seat will not be available on a flight for which a person has a confirmed reservation. If the flight is overbooked, no one will be denied a seat until airline personnel first ask for volunteers willing to give up their reservation in exchange for compensation of the airlines choosing. If there are not enough volunteers, the airline will deny boarding to other persons in accordance with its particular boarding priority. The complete rules for the payment of compensation and each airlines boarding priorities are available at all airport ticket counters and boarding locations. Some airlines do not apply these consumer protections to travel from some foreign countries, although other consumer protections may be available. Check with your airline or your travel agent. BAGGAGE: Excess valuation may be declared on certain types of articles.</br>
+          Carriers may apply special rules for fragile, valuable, or perishable articles. Check with your carrier. Checked Baggage: Carriers may permit a free checked baggage allowance, which is set by the carrier and may differ by class, and/or route. Carriers may apply extra charges for checked baggage in excess of their permitted allowance. Check with your carrier. Cabin (Unchecked) Baggage: Carriers may permit a free cabin baggage allowance, which is set by the carrier and may differ by class, route, and/or aircraft type. It is recommended that cabin baggage be kept to a minimum. Check with your carrier. If more than one carrier is providing the transportation for your journey, each carrier may apply different rules on baggage (both checked and cabin).
+
+
+        </p>
+        <p>CHECK-IN TIMES. The time shown on the itinerary/receipt is the departure time of the aircraft. Flight departure time is not the same as the time you must check-in or the time you must be available for boarding. Your carrier may refuse you carriage if you are late. Check-in times, as advised by your carrier, are the latest times at which passengers can be accepted for travel; boarding times, as advised by your carrier, are the latest times at which passengers must present themselves for boarding.
+
+        </p>
+        <p>DANGEROUS GOODS (HAZARDOUS MATERIALS). For safety reasons, dangerous goods must not be packed in checked or cabin (unchecked) baggage except as specifically permitted. Dangerous goods include but are not limited to: compressed gases, corrosives, explosives, flammable liquids and solids, radioactive materials, oxidising materials, poisons, infectious substances, and briefcases with installed alarm devices. For security reasons, other restrictions may apply. Check with your carrier.
+
+        </p>
+        <p>The EU legislation and Federal law forbid the carriage of hazardous materials aboard aircraft in your luggage or on your person.
+          In the event of charges made by LuxFlight Travel, the Merchant Location and address used for payment processing will be:
+          Luxury Travel Services LLC,</br>919 N. Market St., Ste 725 Wilmington, DE 19801
+          </p>
+        <h2>Credit Card Chargebacks</h2>
+        <p style="margin-top: 10px;">
+          You have the ability to dispute charges with credit card companies ("chargebacks"). If you have a question about a charge on your credit card statement, we encourage you to call LuxFlight Travel prior to disputing a charge with your credit card company so we may discuss and answer any questions or concerns you may have about our charges. In all cases, LuxFlight Travel will work with you in resolving your concerns. LuxFlight Travel retains the right to dispute any chargeback that it believes is improper, as described more fully below. LuxFlight Travel also retains the right to fully cancel any booking in the event of a chargeback related to that booking.
+        </p>
+        <p>LuxFlight Travel deems the following chargeback scenarios as improper and retains the right to investigate and rebut any such chargeback claims and to recover costs of such chargeback claims from you.
+
+        </p>
+        <ul style="margin-top: 10px; margin: 0; padding-left: 0em;">
+          <li>Chargebacks resulting from non-cancellable bookings in the event that LuxFlight Travel or the airline cannot provide a refund, whether or not the booking is used.
+          </li>
+          <li>Chargebacks resulting from charges authorized by family, friends, associates or other third parties with direct access to your credit card.
+          </li>
+          <li>Chargebacks arising from the airline’s failure to deliver a product or service in a manner that’s consistent with the airline’s product description.
+          </li>
+          <li>Chargebacks resulting from force majeure or other circumstances that are beyond the control of LuxFlight Travel.
+          </li>
+          <li>Chargebacks related to the services or products that have been used fully or partially by you.
+          </li>
+        </ul>
+        <p>For greater certainty, we may, in accordance with the Privacy Policy, use information relating to you, including recordings of customer service calls, to dispute chargeback claims from you.
+
+        </p>
+        <p>You hereby unconditionally authorize Luxury Travel Services LLC to charge your credit card (and / or retain from your customer's account) with the amount of any chargeback processed by the bank and related to the services or products that have been used fully or partially by you.
+
+        </p>
+        <p>You hereby unconditionally authorize Luxury Travel Services LLC to charge your credit card (and / or retain from your customer's account) with the amount of any chargeback fees applied by the bank to the chargeback requested by you without merits and subsequently rejected by the bank.
+
+        </p>
+        <h2 style="font-size: 45px; font-weight: 500;">COVID-19 WAIVER OF LIABILITY</h2>
+        <p style="margin-top: 10px;">
+You agree that it is your personal decision to travel, and you are doing so with full knowledge of current travel recommendations and travel restrictions with regards to the risks of COVID-19. We assume no responsibility for and shall not be liable for unsafe conditions or health hazards including pandemics or other illnesses. We have no special knowledge of dangers during travel or at destinations. For information related to such dangers, we recommend going to the State Department travel website at <a href="https://travel.state.gov/content/travel.html">www.travel.state.gov</a>, click on "Find International travel Information” then click on "Country Information", and fill in the name of the destination country. For medical and health information, we recommend going to the Centers for Disease Control website at <a href="https://wwwnc.cdc.gov/travel">www.cdc.gov/travel</a>, then click on “Destinations” and scroll to the name of the destination country. We have no responsibility for COVID-19-related requirements that travel suppliers and governments may impose from time to time, such as health affidavit forms, health screenings prior to departure or upon arrival, face coverings, or quarantines. For the latest COVID-19 government travel regulations, we recommend going to IATA’s website at <a href="https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm">https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm</a>. For the latest travel supplier requirements, check the supplier’s home page. We are not responsible for the acts or omissions of travel suppliers or their failure to adhere to their own schedules, provide services or refunds, financial default, or failure to honor future trip credits. We have no special knowledge regarding the financial condition of the suppliers, and we have no liability for recommending a trip credit in lieu of a refund. If requested, we will assist with obtaining any refunds due or rebooking trips using future credits, but we may charge a nonrefundable fee for such services. You agree to hold us harmless for your election not to purchase travel insurance or for any denial of claim by travel insurer as it relates to COVID-19 or any other claim under the policy. YOU HEREBY EXPRESSLY ASSUME ALL OF THE RISKS AND DANGERS DESCRIBED ABOVE, AND YOU HEREBY EXPRESSLY AGREE TO FOREVER RELEASE, DISCHARGE AND HOLD US, AND OUR AGENTS, EMPLOYEES, OFFICERS, DIRECTORS, ASSOCIATES, AFFILIATED COMPANIES, GUIDES, GROUP LEADERS, AND SUBCONTRACTORS HARMLESS AGAINST ANY AND ALL LIABILITY, ACTIONS, CAUSES OF ACTIONS, SUITS, CLAIMS, AND DEMANDS OF ANY AND EVERY KIND AND NATURE WHATSOEVER WHICH YOU NOW HAVE OR WHICH MAY HEREAFTER ARISE OUT OF OR IN CONNECTION WITH THESE RISKS AND DANGERS.
+
+
+        </p>
+  </main>
+  <section class="subscribe">
+    <div class="section__container subscribe__container">
+      <h4>Subscribe and be Updated</h4>
+      <form action="https://formspree.io/f/xanwyovr" method="POST" class="subscribe-form">
+        <div class="input-container">
+          <div class="phone-prefix">
+            <img src="assets/us-flag.png" alt="US Flag" class="flag-icon" />
+            <span class="country-code">+1</span>
+            <span class="separator">|</span>
+          </div>
+          <input
+            type="tel"
+            id="phone phone-separator"
+            placeholder="Phone Number"
+            name="phone"
+            pattern="\d{10}"
+            title="Phone number must be exactly 10 digits without any spaces or dashes."
+            required
+            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="10"
+          />
+        </div>
+        <span class="separator email-separator">|</span>
+        <div class="input-container email-container">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            name="email"
+          />
+        </div>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section> 
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h5>LuxFlight Travel</h5>
+        <p>
+          Welcome to LuxFlight Travel, our tour and travel website is your
+          gateway to a world of wanderlust-inducing experiences.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#destination">Destinations</a>
+        <a href="#subscribe">Write to Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer__col">
+        <h4>Features</h4>
+        <a href="#">Vacation Package</a>
+        <a href="#">List of Tours</a>
+        <a href="#">Gallery</a>
+        <a href="#">Travel on a Budget</a>
+      </div>
+      <div class="footer__col">
+        <h4>Follow Us</h4>
+        <div class="footer__socials">
+          <img src="assets/lets_stay_connected.svg" alt="" />
+          <span>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p>
+        *All the fares displayed are in USD and include all taxes, fees and
+        applicable surcharges. All prices are 'from' per person, based on
+        business class weekday travel (Monday - Thursday) from the USA, and
+        depend on the chosen class of service, departure city, airline and the
+        route. Lowest transatlantic fares are usually from the East Coast;
+        transpacific fares - from the West Coast, fares to Latin America -
+        from Florida. Flyluxury is not able to identify some travel partners
+        or itinerary details online so as not to directly compete with retail
+        sales of our partners. Savings up to 60% off are indicated of the full
+        unrestricted published prices of major airlines and may vary based on
+        individual fare rules. Some airlines may impose additional baggage
+        charges. The fares are subject to seat availability in the
+        corresponding booking inventory. Seats are limited and may not be
+        available on all flights and dates. The fares have flexible booking
+        policy: free exchange and/or cancellation is available now with our
+        partner airlines. In the event of trip cancellation, unless otherwise
+        stated, customers will retain travel credit with the issuing airline
+        for a period determined by the airline policy, excluding airline fees.
+        In the event of exchange, fare difference may apply. The fares and
+        their governing rules are subject to change without prior notice.
+        Other restrictions may apply.
+      </p>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 LuxFlight Travel. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    document.querySelector(".subscribe-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  const form = event.target;
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      Swal.fire({
+        title: "Thank you for subscribing!",
+        text: "You will now receive updates directly to your inbox.",
+        icon: "success",
+        confirmButtonText: "Close",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.reset(); // Reset the form fields
+        }
+      });
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          Swal.fire({
+            title: "Error!",
+            text: data["errors"].map(error => error["message"]).join(", "),
+            icon: "error",
+            confirmButtonText: "Close",
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "There was an error sending your subscription. Please try again later.",
+            icon: "error",
+            confirmButtonText: "Close",
+          });
+        }
+      });
+    }
+  }).catch(error => {
+    Swal.fire({
+      title: "Error!",
+      text: "There was an error sending your subscription. Please try again later.",
+      icon: "error",
+      confirmButtonText: "Close",
+    });
+  });
+});
+  </script>
+</body>
+</html>
