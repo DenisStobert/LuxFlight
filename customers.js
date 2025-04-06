@@ -21,7 +21,7 @@ document.getElementById("logoutButton").addEventListener("click", function(event
 });
   async function fetchCustomerData() {
       try {
-          const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getBinData');
+          const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getBinData');
 
           if (!response.ok) {
               throw new Error('Failed to retrieve customer data');
@@ -748,7 +748,7 @@ if (seatNumber.includes('Edit')) {
   console.log(emailData);  // Log the data to check before sending
 
   // Send data to back-end
-  fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/send-email', {
+  fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -825,7 +825,7 @@ async function deleteCustomer(email) {
   if (confirm('Are you sure you want to delete this customer?')) {
       try {
           // Step 1: Fetch the customer data to be deleted
-          const customerResponse = await fetch(`https://nameless-sands-85519-56d7c462d260.herokuapp.com/getCustomer?email=${email}`, {
+          const customerResponse = await fetch(`https://luxflight-travel-fb03a9ec5505.herokuapp.com/getCustomer?email=${email}`, {
               method: 'GET',
               headers: {
                   'Content-Type': 'application/json',
@@ -840,7 +840,7 @@ async function deleteCustomer(email) {
           const customerData = await customerResponse.json();
 
           // Step 2: Archive the customer data to the history bin
-          const archiveResponse = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/archiveCustomer', {
+          const archiveResponse = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/archiveCustomer', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

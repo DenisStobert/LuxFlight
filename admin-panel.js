@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/login', {
+  fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/login', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

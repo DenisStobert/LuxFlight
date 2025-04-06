@@ -64,7 +64,7 @@ window.onclick = function (event) {
 
   async function fetchUsersData() {
     try {
-      const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getUsers'); // Fetch data from backend
+      const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getUsers'); // Fetch data from backend
       if (!response.ok) {
         throw new Error('Failed to retrieve user data');
       }
@@ -89,7 +89,7 @@ window.onclick = function (event) {
 
   async function fetchUsersData() {
     try {
-      const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getUsers');
+      const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getUsers');
       if (!response.ok) {
         throw new Error('Failed to retrieve user data');
       }
@@ -176,7 +176,7 @@ window.onclick = function (event) {
     }
   
     try {
-      const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/deleteUser', {
+      const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/deleteUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -212,7 +212,7 @@ window.onclick = function (event) {
 
     console.log(role);
     try {
-      const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/register', {
+      const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

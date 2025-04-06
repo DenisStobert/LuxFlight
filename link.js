@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const currentUrl = window.location.href;
 
     // Fetch the existing bin data
-    const existingDataResponse = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getBinData');
+    const existingDataResponse = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getBinData');
     if (!existingDataResponse.ok) {
       throw new Error('Failed to retrieve existing customer data');
     }
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Fetch the archived data
-    const archivedDataResponse = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getArchivedData');
+    const archivedDataResponse = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getArchivedData');
     if (!archivedDataResponse.ok) {
       throw new Error('Failed to retrieve archived customer data');
     }
@@ -319,7 +319,7 @@ payButton.addEventListener("click", async (event) => {
 
   try {
     // Fetch the existing bin data
-    const existingDataResponse = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getBinData');
+    const existingDataResponse = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getBinData');
     if (!existingDataResponse.ok) {
       throw new Error('Failed to retrieve existing customer data');
     }
@@ -340,7 +340,7 @@ payButton.addEventListener("click", async (event) => {
     const updatedData = { customer: updatedCustomerList };
 
     // Send updated data back to the backend
-    const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/updateBin', {
+    const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/updateBin', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

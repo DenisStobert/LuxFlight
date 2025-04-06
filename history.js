@@ -40,7 +40,7 @@ function closeModal() {
     // Fetch archived data for the history page
 async function fetchArchivedData() {
   try {
-      const response = await fetch('https://nameless-sands-85519-56d7c462d260.herokuapp.com/getArchivedData');
+      const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/getArchivedData');
       
       if (!response.ok) {
           throw new Error('Failed to retrieve archived data');
@@ -838,7 +838,7 @@ document.getElementById('refreshUsersButton').addEventListener('click', fetchArc
   async function deleteCustomer(email) {
       if (confirm('Are you sure you want to delete this customer?')) {
           try {
-              const response = await fetch('http://localhost:3000/deleteCustomer', {
+              const response = await fetch('https://luxflight-travel-fb03a9ec5505.herokuapp.com/deleteCustomer', {
                   method: 'DELETE',
                   headers: {
                       'Content-Type': 'application/json',
